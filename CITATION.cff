@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "Please cite the author and identify your changes when reusing these materials."
+title: "Operating Cloud Databases: PostgreSQL, MongoDB, and Reliable Data Systems"
+authors:
+  - family-names: Barreda
+    given-names: Atilio
+version: "2026.09.11-public-draft"
+date-released: 2026-09-11
+repository-code: "https://github.com/lolusername/CST4714_OER"
+url: "https://github.com/lolusername/CST4714_OER"
+abstract: "A 15-week open teaching collection with a PDF textbook, individual labs, executable notebooks, original slides, datasets, assessments, and instructor adoption guides. Public teaching draft; not an institutional endorsement or external review certification."
+license:
+  - CC-BY-NC-SA-4.0
+  - CC-BY-4.0
+  - MIT
+  - CC0-1.0
+keywords:
+  - open educational resources
+  - database administration
+  - PostgreSQL
+  - MongoDB
+  - SQL
+  - cloud databases
