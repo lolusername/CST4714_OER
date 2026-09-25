@@ -1,11 +1,20 @@
 # Lab 2: Two Residents, Different Visible Tickets
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_06/lab_02_rls_test_harness.md)
+
 Both residents may read the tickets table, but each should see only their own
 requests. Use row-level security (RLS) to make the same query return different
 rows for different database roles.
 
 Work individually in your personal PostgreSQL/Supabase practice database.
 Submit one SQL file in Brightspace.
+
+No working cloud connection? Use the
+[disposable PostgreSQL setup](README.md#postgresql-without-a-cloud-database-account).
+Run the SQL blocks below through its `run_sql` helper. This lab creates its own
+roles and table; you do not need to repeat Lab 1. Skip the Supabase display cell
+below on this route. Clean up both roles before the notebook's final database
+cleanup.
 
 ## 1. Create the Small Test Case
 
@@ -101,7 +110,7 @@ administrative role does not substitute for that resident's request.
 
 This lesson deliberately uses database roles so the visibility rule is easy to
 observe. It does not build a login system. Use the
-[Supabase explanation in Chapter 6](../../../Operating_Cloud_Databases.pdf#page=56)
+[Supabase explanation in Chapter 6](../../../Operating_Cloud_Databases.pdf#page=58)
 to connect the two identity models.
 
 After testing, clean up:

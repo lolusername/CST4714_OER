@@ -4,8 +4,8 @@ title: "Operating Cloud Databases: PostgreSQL, MongoDB, and Reliable Data System
 authors:
   - family-names: Barreda
     given-names: Atilio
-version: "2026.09.11-public-draft"
-date-released: 2026-09-11
+version: "2026.09.25-public-draft"
+date-released: 2026-09-25
 repository-code: "https://github.com/lolusername/CST4714_OER"
 url: "https://github.com/lolusername/CST4714_OER"
 abstract: "A 15-week open teaching collection with a PDF textbook, individual labs, executable notebooks, original slides, datasets, assessments, and instructor adoption guides. Public teaching draft; not an institutional endorsement or external review certification."

@@ -1,5 +1,7 @@
 # Lab 1: Inspect a Database Before Changing It
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_03/lab_01_sql_clinic_schema_xray.md)
+
 A new developer asks whether a ticket can reference a missing person and whether
 the database rejects misspelled statuses. Answer by inspecting the actual schema.
 
@@ -7,9 +9,12 @@ Work individually in class. Submit one SQL file in Brightspace.
 
 ## 1. Check the Starting Data
 
-Run the [Metro Support setup](../../datasets/metro_support/postgres_setup.sql) in
-your personal Supabase or PostgreSQL practice database. It resets that practice
-schema. Confirm **8 users, 12 tickets, and 21 events**.
+Follow [First PostgreSQL session](../../datasets/metro_support/README.md#first-postgresql-session)
+to open your personal Supabase SQL Editor or the no-account PGlite browser
+option, then load the Metro Support setup. Use a disposable practice environment:
+the setup replaces the course schema and can remove dependent objects. Confirm
+**8 users, 12 tickets, and 21 events**. Continue in a new query so the reset does
+not run again with your answers.
 
 Write a query returning one row per category with total tickets and active tickets
 (`new`, `open`, or `in_progress`). Start from:
@@ -60,6 +65,10 @@ WHERE schemaname = 'metro_support' AND tablename = 'tickets';
 
 Constraint kinds include `p` (primary key), `f` (foreign key), and `c` (check).
 The `::regclass` expression identifies the named table in PostgreSQL's catalog.
+PostgreSQL 18 also lists `n` for `NOT NULL`; older versions can report that rule
+only in the column metadata used above. Compare the definitions, not a fixed
+number of catalog rows. In either case, `is_nullable` answers whether a column
+allows a missing value.
 
 Keep these queries in your file. Use their actual output to answer:
 

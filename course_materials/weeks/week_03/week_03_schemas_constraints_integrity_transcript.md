@@ -10,9 +10,15 @@ Our first meeting is about understanding the current design. We will review a gr
 
 There is one individual SQL submission for each meeting. You do not need to learn a new application framework or create a report in another format. The important work is to connect a database definition to a particular result. We will use the full practice baseline, with eight users, twelve tickets, and twenty-one events, in a database intended for course exercises.
 
+There is one environment change from last week. Our review notebook used DuckDB. Today we need PostgreSQL's own catalog and integrity behavior. Open the first-session walkthrough linked on this week's page. In a Supabase practice project, SQL Editor sends our statements to the hosted PostgreSQL server. If account setup is unavailable, the linked PGlite playground runs PostgreSQL in your browser for this week's work. Choose one path rather than setting up both.
+
+We start by selecting two plus three, labeled sum, alongside current_database. Five in the result tells us a statement ran; it does not mean our course tables already exist. The next step loads the setup file and checks its final counts. That file resets the practice schema, so keep later queries in a separate editor query. We want to add to our work during the course, not recreate the starting state every time we press Run.
+
 [Sources]
 - Course textbook, Chapter 3: A Schema Protects Meaning.
 - Course Metro Support setup and Week 3 lab assignments.
+- https://supabase.com/docs/guides/database/overview
+- https://pglite.dev/docs/about
 
 ## Slide 2
 
@@ -42,9 +48,12 @@ That detail matters in a web SQL editor. A new tab or request can use a differen
 
 The namespace is not a separate cloud project, database server, or independent backup. It helps organize names and permissions within one database. When we inspect information_schema.columns, that is another qualified name: columns is a metadata view inside the information_schema namespace. The same naming convention helps us distinguish application data from descriptions of that data.
 
+This also explains a common dashboard surprise. Supabase's Table Editor has a schema selector above the table list. If it says public, you may see an empty list even though the setup created all three tables in metro_support. Change the selector to metro_support. We can also query metro_support.tickets directly in SQL Editor without relying on which list the graphical editor currently displays. The setup guide includes a screenshot of that selector.
+
 [Sources]
 - Course textbook, Chapter 3: Schema Has Two Related Meanings.
 - https://www.postgresql.org/docs/15/ddl-schemas.html
+- https://supabase.com/docs/guides/database/overview
 
 ## Slide 4
 
@@ -137,13 +146,14 @@ The conrelid condition restricts the result to the course tickets table. The exp
 
 The fresh baseline has a primary key, two foreign keys, and a check on the closing time. The type codes in the result include p for primary key, f for foreign key, and c for check. The two foreign keys refer to requester and assignee. The existing time check permits a missing closing time, but otherwise requires closing not to precede opening.
 
-We are using PostgreSQL 15 for the reference test. Its NOT NULL information should also be inspected through the column metadata we just used. Absence from this particular constraint list does not mean every column permits NULL. Catalog representation can differ across PostgreSQL versions, so read the actual definition and use the appropriate metadata surface.
+The exact number of catalog rows can differ between PostgreSQL versions. PostgreSQL 18 also lists NOT NULL constraints here with the code n. On PostgreSQL 15, inspect that information through the column metadata we just used. In both versions, is_nullable answers whether a column permits a missing value. Extra n rows do not mean you loaded extra tickets or added extra business rules. They are another way the server describes the same required-value definitions.
 
 There is no allowed-status or allowed-priority check in the untouched baseline. That missing protection is what the next lab will address. If you already added one while practicing, your result can legitimately differ. Reset only your disposable course schema when the assignment asks for the baseline, and do not describe a changed schema as the untouched starting point.
 
 [Sources]
 - Course Metro Support setup.
 - https://www.postgresql.org/docs/15/catalog-pg-constraint.html
+- https://www.postgresql.org/docs/18/catalog-pg-constraint.html
 - https://www.postgresql.org/docs/15/functions-info.html
 
 ## Slide 10
@@ -165,7 +175,7 @@ In today's lab you only inspect these definitions. You are not required to condu
 
 ## Slide 11
 
-You now have the examples needed for the first lab. Work individually in your personal PostgreSQL or Supabase practice database. The linked setup file resets only the named course schema, but that still means you should not use a project containing work you need to preserve under that schema. Confirm the eight-user, twelve-ticket, twenty-one-event baseline before interpreting results.
+You now have the examples needed for the first lab. Work individually in your personal PostgreSQL or Supabase practice database, or use the browser PostgreSQL option in the setup guide. The linked setup file removes the course schema and dependent objects, which can include objects outside that schema. It belongs in a disposable practice environment. Confirm the eight-user, twelve-ticket, twenty-one-event baseline before interpreting results, then move to a separate query so running your answers does not run the reset again.
 
 Begin with the category report. Our demonstration counted resolved tickets within each category. Your change counts active tickets instead, using the lab's definition: new, open, or in_progress. Keep the total count alongside it. The totals across categories should add to twelve, and the active counts should add to seven. There is no reason to add a join to that query because the needed values are already in tickets.
 

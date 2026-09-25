@@ -24,8 +24,21 @@ remember SQL from an earlier course.
 
 Use [Chapter 2: Relational Operations Become Testable SQL](../../../Operating_Cloud_Databases.pdf#page=16).
 
-- **Before Day 1:** read from **A Relation Represents One Kind of Fact** through **Join Related Facts**, plus **NULL Means Missing or Inapplicable**. Concentrate on filtering, choosing columns, ordering, missing values, and matching requester IDs. The join derivation and duplicate diagnosis are revisited on Day 2.
-- **Before Day 2:** read **A Join Is a Filtered Product**, **Diagnose Duplicate Rows**, **Group and Aggregate**, **Worked Example: Staff Workload Including Zero Counts**, **Subqueries and CTEs Name Intermediate Relations**, and **Review Safe Data Changes**. Return to the NULL section when explaining unmatched rows.
+- **Before Day 1:** read from **A Relation Represents One Kind of Fact** through
+  **Join Related Facts**, plus **NULL Means Missing or Inapplicable**. Focus on
+  the meaning of a row, choosing rows and columns, and matching identifiers.
+- **Before Day 2:** read **Diagnose Duplicate Rows**, **Group and Aggregate**,
+  **Worked Example: Staff Workload Including Zero Counts**, **Subqueries and CTEs
+  Name Intermediate Relations**, and **Review Safe Data Changes**. Trace why the
+  workload includes a staff member with zero and why `ROLLBACK` restores a value.
+
+For another explanation, the free PostgreSQL tutorial covers
+[queries](https://www.postgresql.org/docs/current/tutorial-select.html),
+[joins](https://www.postgresql.org/docs/current/tutorial-join.html),
+[aggregates](https://www.postgresql.org/docs/current/tutorial-agg.html), and
+[transactions](https://www.postgresql.org/docs/current/tutorial-transactions.html).
+Those are alternatives, not another reading assignment; their weather tables
+differ from our Metro Support fixture.
 
 Bring one point you want clarified. Reading supports the in-class work; it does
 not add a separate reading report. Optional textbook practice is not required

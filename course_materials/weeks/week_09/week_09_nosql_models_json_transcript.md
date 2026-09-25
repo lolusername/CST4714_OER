@@ -434,7 +434,7 @@ Your assigned case is ticket 1003. Its requester is user 103 and its assignee is
 
 Write two complete JSON objects in separate fenced blocks inside one Markdown file. The first design keeps users, tickets, and events separately and connects them by IDs. The second embeds useful related information or uses a hybrid shape. Preserve the same required facts in both designs so that the comparison is meaningful.
 
-Below the examples, write a short paragraph explaining how the page finds the requester and events. Then consider a changed requester name and years of additional events. Choose a sensible shape for a page that shows only the five latest events while retaining the complete history. More than one design can satisfy that requirement, provided the meaning and growth rule are clear.
+Below the examples, write a short paragraph explaining how the page finds the requester and events. Then consider a changed requester name and years of additional events. For this lab, keep the three supplied events in both designs and describe what becomes harder as the data changes or grows. You do not need to solve that growth problem yet. Next week we will add a page that shows only its latest two events while retaining all history and maintaining contact details in one place. That will be a new workload to design for, using the JSON foundations you are practicing now.
 
 This is individual work in class. No SQL, MQL, or Python execution is required. Submit only the Markdown file in Brightspace, with the two examples and the paragraph together. The lab page is the authoritative statement of which facts to retain and what to submit.
 

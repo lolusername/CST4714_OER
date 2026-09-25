@@ -15,7 +15,7 @@ session and lock views reveal who is waiting on whom?
 
 ## Before Class: Assigned Reading
 
-Use [Chapter 5: Transactions Coordinate Competing Work](../../../Operating_Cloud_Databases.pdf#page=47).
+Use [Chapter 5: Transactions Coordinate Competing Work](../../../Operating_Cloud_Databases.pdf#page=48).
 
 - **Before Day 1:** read from **A Transaction Is a Unit of Decision** through **ACID Describes Guarantees, Not a Product Label**, including the state/history pair and zero-row UPDATE discussion.
 - **Before Day 2:** read from **Concurrency Creates Useful Work and New Questions** through **Safe Incident Communication**. Follow the visible row versions, blocker, waiter, and final state. The on-call/write-skew example is enrichment; the lab does not require implementing isolation protocols.
@@ -37,7 +37,10 @@ unless the weekly lab assigns it.
 Slides 1-9 teach the complete assignment rehearsal, its stored outcomes, a failed
 pair, and the distinction between an error and an UPDATE that matches no rows.
 The instructor's example assigns Noah and ends with rollback in the source
-schema. Your lab uses Priya and separate disposable tables.
+schema. Your lab uses Priya and separate disposable tables. After committing
+that assignment, you test an outdated request to assign the same ticket to Noah.
+Read both the empty UPDATE result and the unchanged current record before
+deciding what an application should tell its caller.
 
 Complete [Lab 1: Assign a ticket and record its history together](lab_01_transaction_outcomes.md).
 

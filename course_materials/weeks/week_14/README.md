@@ -15,7 +15,7 @@ trace propagation, repair safely, and verify more than one record?
 
 ## Before Class: Assigned Reading
 
-Use [Chapter 14: Multiple Databases Multiply Options and Obligations](../../../Operating_Cloud_Databases.pdf#page=137).
+Use [Chapter 14: Multiple Databases Multiply Options and Obligations](../../../Operating_Cloud_Databases.pdf#page=153).
 
 - **Before Day 1:** read through the worked incident, including the outbox, version-guard, and reconciliation explanations. The lab uses a supplied incident and a small Python model, not a new distributed deployment.
 - **Before Day 2:** review **Identity and Access Cross the Boundary Too**, **Backup and Restore Need an Order**, and **A One-Database Design Is Often the Stronger Decision** for the project clinic.
@@ -29,16 +29,24 @@ unless the weekly lab assigns it.
 - [Week 14 student deck](week_14_polyglot_incident.pptx)
 - [Week 14 PDF handout](week_14_polyglot_incident.pdf)
 - [Week 14 transcript](week_14_polyglot_incident_transcript.md)
+- [Guided incident notebook](../../notebooks/08_polyglot_incident.ipynb), using SQLite and Python without a database account or package installation
+- [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lolusername/CST4714_OER/blob/main/course_materials/notebooks/08_polyglot_incident.ipynb) for Lab 1; save a working copy in Drive.
 
 ## Day 1: Individual Polyglot Incident Room
 
+Use **slides 1-22** for the transaction, delivery, and reconciliation examples.
+
 Complete [Lab: Repair a stale MongoDB projection](lab_01_polyglot_incident.md).
 
-Run the lab's supplied Python model in a blank Colab notebook, then submit one
-Brightspace text incident update with the broken and repaired results. No extra
-notebook attachment is required.
+Use the guided notebook for the live transaction demonstration and individual
+duplicate/delayed-event experiment. Click **Open in Colab** above, or download
+the linked notebook for local Jupyter. Colab requires a Google sign-in.
+Then submit one Brightspace text incident
+update with the broken and repaired results. No notebook attachment is required.
 
 ## Day 2: Final Project Operations Clinic
+
+Use **slides 23-30** for the operations review and demonstration preparation.
 
 Use the [canonical final project](../../assignments/final_project.md) and its rubric. Work
 individually on the highest-risk unfinished area: model, query, index, access,

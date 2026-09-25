@@ -1,17 +1,20 @@
 digraph PolyglotOutbox {
-  graph [bgcolor="transparent", rankdir=LR, pad=0.25, nodesep=0.35, ranksep=0.5,
+  graph [bgcolor="transparent", rankdir=TB, pad=0.18, nodesep=0.4, ranksep=0.4,
          fontname="Avenir Next"];
-  node [shape=box, style="rounded,filled", fontname="Avenir Next", fontsize=10,
+  node [shape=box, style="rounded,filled", fontname="Avenir Next", fontsize=14,
         color="#1F6F78", fillcolor="#F4F8F7", fontcolor="#16324F", penwidth=1.4,
         margin="0.14,0.09"];
   edge [color="#1F6F78", penwidth=1.5, arrowsize=0.75, fontname="Avenir Next",
-        fontsize=9, fontcolor="#51606D"];
+        fontsize=12, fontcolor="#51606D"];
 
   app [label="Application command"];
   tx [label="One PostgreSQL transaction\n1. business row\n2. outbox event", fillcolor="#EAF4F3"];
   relay [label="Relay / worker\nretries delivery", fillcolor="#FFF4E8", color="#C8653B"];
-  mongo [label="MongoDB read model\nidempotent upsert", shape=cylinder, fillcolor="#E9F1F8", color="#2E5F87"];
-  evidence [label="Evidence\nevent id + status + timestamps", fillcolor="#FFFFFF"];
+  mongo [label="MongoDB read model\nversion-guarded write", shape=cylinder, fillcolor="#E9F1F8", color="#2E5F87"];
+  evidence [label="Delivery log\nevent id + status + timestamps", fillcolor="#FFFFFF"];
+
+  { rank=same; app; tx; }
+  { rank=same; mongo; evidence; }
 
   app -> tx [label="commit atomically"];
   tx -> relay [label="unpublished event"];

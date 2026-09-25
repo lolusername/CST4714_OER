@@ -128,15 +128,20 @@ Your first lab now applies the transaction example in disposable tables. The set
 
 The proposed assignment in your lab is to Priya, user 201, and the new event is 5999. Start by checking ticket 1004's actual initial state. Run the rehearsal ending in rollback, then query the ticket and event afterward. Next, keep the approved pair by replacing that ending with commit and check the stored result again.
 
-The last experiment starts a new transaction, changes priority, and deliberately attempts to insert the already approved event key. Run rollback separately after the expected error. Your checks should distinguish the discarded new priority from the earlier committed assignment and event, which remain.
+The next experiment starts a new transaction, changes priority, and deliberately attempts to insert the already approved event key. Run rollback separately after the expected error. Your checks should distinguish the discarded new priority from the earlier committed assignment and event, which remain.
+
+Then compare that failure with the outdated assignment request. Imagine another screen still labels this ticket new and submits an assignment to Noah, user 202. The supplied UPDATE includes the condition that status must be new. Because your earlier assignment already moved the ticket to in_progress, this UPDATE returns no rows. There is no SQL exception. The following SELECT still shows Priya, user 201. We have not inserted a history event for this attempt because there was no assignment to record.
 
 Use short comments in the same SQL file to explain what happened. The explanation should answer why putting the update and insert in separate committed transactions could leave the application's current state and history inconsistent. It should not just say that transactions are safer.
+
+Add one sentence for the application developer: check the returned ticket before writing history or announcing success. If no row was returned, inspect the current record rather than telling the caller that Noah now has the ticket. An outdated status and a missing ticket can both produce an empty result, so the count tells us that our requested change did not happen, but does not by itself diagnose every cause.
 
 Keep the expected-error batch clearly labeled so someone rerunning your file knows where execution pauses. If you restart the full exercise, use its disposable setup rather than resetting the source schema. There is one submission: your SQL file with the queries, observed results, and explanation. No second database session is required for this first lab.
 
 [Sources]
 - Week 5, Lab 1: Assign a Ticket and Record Its History Together.
 - https://www.postgresql.org/docs/15/sql-createtableas.html
+- https://www.postgresql.org/docs/15/sql-update.html
 
 ## Slide 10
 
@@ -302,7 +307,7 @@ The optional extension asks you to draw and explain this relationship. You do no
 
 This is the setting you will change in the notebook. Use cloud must be true for the connection experiment to run. Keep A change is initially false, meaning A rolls back. For your second run, change only that second setting to true. The table setup and B's SQL should remain unchanged so that the comparison isolates A's decision.
 
-Download Notebook 02, open Colab, and use File, then Upload notebook. In Supabase, use the Connect dialog's Session pooler connection for this exercise. Follow the notebook's SSL instructions and enter the connection URL only when the hidden prompt appears. Do not paste a password-bearing URL into a code cell or a Markdown explanation.
+Open the Lab 2 page and click Open in Colab. Save a copy in Drive so you can keep your changes and results. The weekly page has the same button beside Notebook 02; downloading the file is only necessary if you prefer local Jupyter. In Supabase, use the Connect dialog's Session pooler connection for this exercise. Follow the notebook's SSL instructions and enter the connection URL only when the hidden prompt appears. Do not paste a password-bearing URL into a code cell or a Markdown explanation.
 
 The notebook contains more mechanics than you need to write yourself. It opens labeled connections, starts B's work in a background worker, observes the actual blocking relationship, and ends A before waiting for B to finish. Its cleanup path is designed to avoid leaving a row blocked while you study the output.
 
@@ -313,6 +318,7 @@ Keep your first result in the final Markdown cell before rerunning. Notebook out
 [Sources]
 - Notebook 02 configuration and controlled experiment.
 - https://supabase.com/docs/guides/database/connecting-to-postgres
+- https://research.google.com/colaboratory/faq.html
 
 ## Slide 21
 

@@ -100,11 +100,11 @@ def main() -> int:
                 for name in slides + notes:
                     ET.fromstring(archive.read(name))
     check(lab_count == 24, f"Expected 24 labs, found {lab_count}")
-    check(slide_count == 321, f"Expected 321 slides, found {slide_count}")
+    check(slide_count == 380, f"Expected 380 slides, found {slide_count}")
     COUNTS.update(weeks=len(weeks), labs=lab_count, slides=slide_count)
 
     notebooks = sorted((MATERIALS / "notebooks").glob("*.ipynb"))
-    check(len(notebooks) == 7, f"Expected seven notebooks, found {len(notebooks)}")
+    check(len(notebooks) == 11, f"Expected eleven notebooks, found {len(notebooks)}")
     for path in notebooks:
         notebook = json.loads(path.read_text())
         check(notebook.get("nbformat") == 4, f"Unexpected notebook format: {path.name}")

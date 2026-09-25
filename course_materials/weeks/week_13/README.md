@@ -11,16 +11,16 @@ decisions?
 - state a measurable capacity and growth assumption;
 - compare tune, scale up, replica, partition, and shard options;
 - evaluate shard-key cardinality, frequency, monotonicity, and targeting;
-- connect from Python without saving credentials;
+- connect from Python while keeping credentials out of code and submitted output;
 - inspect and load a small, licensed public-data subset; and
 - turn the notebook into final-project inspiration or a skill checkpoint.
 
 ## Before Class: Assigned Reading
 
-Use [Chapter 13: Scale Changes the Questions a System Must Answer](../../../Operating_Cloud_Databases.pdf#page=128).
+Use [Chapter 13: Scale Changes the Questions a System Must Answer](../../../Operating_Cloud_Databases.pdf#page=140).
 
-- **Before Day 1:** read the capacity and distribution sections through **Worked Example: Evaluate Metro Support Candidates**, plus **Inspect the Public Source Before Loading It**.
-- **Before Day 2:** read the Python connection, parameterized-query, repeat-import, and storage-projection explanations. The notebook provides complete setup; only one database path is required.
+- **Before Day 1:** read the capacity and distribution sections through **Worked Example: Evaluate Metro Support Candidates**, plus **Inspect the Public Source Before Loading It** and the storage projection in **Scaling Also Scales Operations**.
+- **Before Day 2:** read the Python connection, parameterized-query, and repeat-import explanations. The notebook provides complete setup; only one database path is required.
 
 Bring one point you want clarified. Reading supports the in-class work; it does
 not add a separate reading report. Optional textbook practice is not required
@@ -29,43 +29,63 @@ unless the weekly lab assigns it.
 ## Class Materials
 
 - [Public data, shard-key, and cloud import notebook](../../notebooks/06_public_data_capacity_integration.ipynb)
-- [Open Colab](https://colab.research.google.com/), then **File > Upload notebook** using the downloaded file above.
+- [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lolusername/CST4714_OER/blob/main/course_materials/notebooks/06_public_data_capacity_integration.ipynb) for Lab 1; save a working copy in Drive.
 - [Week 13 student deck](week_13_scale_integration.pptx)
 - [Week 13 PDF handout](week_13_scale_integration.pdf)
 - [Week 13 transcript](week_13_scale_integration_transcript.md)
+- [Individual lab for both meetings](lab_01_public_data_integration.md)
+- [Historical CISA teaching sample: JSON, CSV, and source notes](../../datasets/cisa_kev_sample/README.md)
 
 ## Free External Data
 
 The notebook uses the U.S. Cybersecurity and Infrastructure Security Agency's
 Known Exploited Vulnerabilities catalog through its public JSON feed. The notebook
 includes a small offline fixture and records the source and retrieval date.
+The linked JSON and CSV contain the same 75-record historical sample for the
+textbook's standalone examples. The notebook already includes these records;
+you do not need another download or an additional submission for the lab.
 
 ## Day 1: Evaluate Distribution Without Pretending to Shard
 
-Atlas Free cannot create a sharded cluster. We use open Python code to measure
-candidate key cardinality, frequency, monotonicity, and simulated range/hashed
-distribution. Students make a design recommendation without claiming a paid
-deployment.
+Use **slides 1-16**. We distinguish latency from throughput, calculate a small
+latency percentile, and compare replication, partitioning, and sharding. We then
+use Notebook 06's Sections 1 and 2 to inspect the source and measure candidate
+keys. The range/hash experiment makes placement visible without deploying a
+sharded cluster. Atlas Free does not provide that deployment.
+
+Begin Part 1 of the individual lab. Compare CVE identifier with date added and
+explain whether either fits the question you want to answer. Save the same
+notebook for Day 2; there is no separate Day 1 submission.
 
 ## Day 2: Connect, Load, Verify, and Reuse
 
-Students choose Atlas, Supabase/PostgreSQL, both, or the offline SQLite path. The notebook
-loads a small verified subset and runs one useful query on each chosen target.
+Use **slides 17-32**. We read the connection and import code, distinguish
+transaction atomicity from repeat behavior, and examine a wrong stored value
+that a correct row count would miss.
 
-Complete [Lab: Public data capacity and cloud integration](lab_01_public_data_integration.md).
+Complete Part 2 of the [individual lab](lab_01_public_data_integration.md). Set
+`TARGET` to `"sqlite"`, `"atlas"`, or `"postgres"`; **one path is required**.
+SQLite uses Python's built-in database and the embedded data. The cloud paths
+install their driver only when selected. To try another path, clean up the first
+run before starting a new one.
 
-Submit only the completed `06_public_data_capacity_integration.ipynb` notebook.
+Repeat the chosen import against its existing output, change the grouping from
+vendor to product, and compare the result with the source. Write the short
+maintenance handoff in the notebook, then clean up the practice objects.
 
-## Optional Industry Extension: KEV Patch-Priority Briefing
+Submit only the completed `06_public_data_capacity_integration.ipynb` notebook in
+Brightspace. The handoff practices explaining a data pipeline to a future
+colleague; it does not require a partner or another document.
+
+## Optional Industry Extension: A Catalog Question
 
 This activity is optional, ungraded, and does not add a submission.
 
-Use the included real CISA KEV sample to identify one vendor or product group that
-appears repeatedly and one due-date or ransomware-use pattern worth investigating.
-Create one grouped query, verify one group against raw records, and write a
-four-sentence briefing for a vulnerability-operations lead. End with one data
-limitation and one index or partitioning decision that would depend on the real
-production query volume rather than this 75-record teaching sample.
+Try a date-window question in the historical sample and check a matching record
+directly. Discuss which index or placement rule could help that query under a
+larger measured workload. Do not use the subset to declare a real system safe,
+rank vendor security, or decide a current patch deadline. No additional writing
+or final-project deliverable is required.
 
 ## End-of-Week Self-Check
 

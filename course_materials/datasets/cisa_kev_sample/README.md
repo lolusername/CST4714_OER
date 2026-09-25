@@ -13,7 +13,7 @@ aggregation, capacity reasoning, and candidate shard-key analysis.
 
 ## Transformation
 
-[The dataset builder](../../tools/build_datasets.py) retrieves the official JSON feed, selects the first 75
+`tools/build_datasets.py` retrieves the official JSON feed, selects the first 75
 records in source order, and keeps only:
 
 - CVE ID;
@@ -35,16 +35,10 @@ current vulnerability-management source.
 Official feed:
 <https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json>
 
-CISA distributes the KEV database under **CC0 1.0**, as stated in its
-[official KEV repository license](https://github.com/cisagov/kev-data/blob/develop/LICENSE).
-This teaching subset retains that CC0 status. The CISA logo, DHS seal, and
-third-party material linked from source records are not covered by that data
-dedication. CISA does not endorse this course.
-
-Course-authored transformation code is MIT licensed; this README is CC BY-NC-SA
-4.0. The preserved sample is a dated classroom fixture, not a live feed. Running
-the builder replaces the sample with a newly dated snapshot, so recheck any lab
-examples that depend on particular records before distributing an update.
+CISA provides the catalog as public U.S. government information. Review the
+current [KEV catalog and its license notice](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
+before redistribution. Course-authored transformation code is MIT licensed; this
+README is CC BY-NC-SA 4.0. Source data retains applicable U.S. government terms.
 
 ## Safety
 

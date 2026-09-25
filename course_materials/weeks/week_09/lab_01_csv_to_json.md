@@ -1,5 +1,7 @@
 # Lab: One Ticket, Two JSON Designs
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_09/lab_01_csv_to_json.md)
+
 A ticket page needs a requester's name, the ticket's status, and its event
 history. Those facts can be represented in more than one sensible JSON shape.
 Design two alternatives and explain which read each makes convenient.
@@ -63,9 +65,10 @@ Where does it find those facts in each design?
 years of events. Which information would need updating, and which part could
 grow too large?
 
-Choose a design for a page showing only the five latest events while retaining
-the complete history. You may propose bounded embedding plus a separate history
-collection. Explain your choice; there is no single required document shape.
+For this lab, preserve the three supplied events in each design and describe the
+tradeoff. You do not need to solve the growing-history problem yet. Week 10 adds
+a new workload: a page that displays only its latest two events while retaining
+all history and updating contact details in one place.
 
 **Submit:** `week_09_json_models.md` with two JSON examples and your paragraph.
 This is one file, not an Atlas configuration task or a second written assignment.

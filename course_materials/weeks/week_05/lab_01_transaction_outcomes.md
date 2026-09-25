@@ -1,5 +1,7 @@
 # Lab 1: Assign a Ticket and Record Its History Together
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_05/lab_01_transaction_outcomes.md)
+
 Assigning a ticket changes its current state and creates a history event. If one
 change persists without the other, the current record and history disagree.
 Use a transaction to make the pair one unit of work.
@@ -78,13 +80,36 @@ then query the ticket's priority and event 5999. The priority should still be
 `low`, and the earlier approved event should still exist. This failure does not
 undo a transaction that already committed.
 
-Explain why the failed pair kept neither new change, and what could go wrong if
-the UPDATE had committed separately before the failed insert. An UPDATE that
-matches zero rows is different: it is valid SQL, so an application must check the
-affected-row result before claiming that a requested assignment happened.
+Compare that error with an outdated assignment request. Priya already has the
+ticket, but another request still assumes its status is `new`. Predict the two
+results, then run this whole block:
+
+```sql
+BEGIN;
+UPDATE transaction_lab.tickets
+SET assignee_id = 202, status = 'in_progress'
+WHERE ticket_id = 1004 AND status = 'new'
+RETURNING ticket_id, assignee_id, status;
+
+SELECT ticket_id, assignee_id, status
+FROM transaction_lab.tickets WHERE ticket_id = 1004;
+ROLLBACK;
+```
+
+The UPDATE should return **no rows**, without an SQL error. The SELECT should
+still show **201, in_progress**. We deliberately do not insert an event in this
+probe. A program that announced an assignment to Noah merely because no exception
+occurred would report a change that never happened.
+
+In your SQL comments, explain why the failed pair kept neither new change and
+what could go wrong if its UPDATE committed separately. Then write one sentence
+to the application developer: which result must the assignment code check before
+it records history or tells the caller that the assignment succeeded? A zero-row
+result calls for examining the current record; by itself it cannot distinguish
+an outdated status from a missing ticket.
 
 **Submit:** `week_05_transaction_outcomes.sql` with the isolated setup, rehearsal,
-committed version, failed-pair test, and short explanation. Put observed results
+committed version, failed-pair and zero-row tests, and short explanation. Put observed results
 in SQL comments. Keep the expected-error test and its separate rollback labeled
 so a reader knows where execution pauses.
 

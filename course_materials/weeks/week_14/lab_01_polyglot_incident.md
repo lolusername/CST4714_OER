@@ -1,5 +1,9 @@
 # Lab: Why Does the Resident See the Wrong Status?
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_14/lab_01_polyglot_incident.md)
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lolusername/CST4714_OER/blob/main/course_materials/notebooks/08_polyglot_incident.ipynb)
+
 The staff dashboard says a request is resolved. The resident's page says it is
 open. Diagnose the disagreement, then try duplicate and delayed events in a
 small executable model.
@@ -42,34 +46,21 @@ No production credentials need to be changed for this paper incident.
 
 ## 2. Try Duplicate and Out-of-Order Delivery
 
-Paste this Python example into a blank [Colab](https://colab.research.google.com/)
-notebook. It uses dictionaries to model the decision, not a real MongoDB server.
+Click **Open in Colab** above. You can also
+[download the guided notebook](../../notebooks/08_polyglot_incident.ipynb) for local Jupyter.
+It uses SQLite for the instructor's transaction demonstration and dictionaries
+for the projection experiment. It never connects to a cloud database.
 
-```python
-projection = {"ticket_id": 1008, "status": "open", "source_version": 16}
-deliveries = [
-    {"event_id": "evt-1008-17", "status": "resolved", "source_version": 17},
-    {"event_id": "evt-1008-17", "status": "resolved", "source_version": 17},
-    {"event_id": "evt-1008-16", "status": "open", "source_version": 16},
-    {"event_id": "evt-1008-18", "status": "closed", "source_version": 18},
-]
+In **Section 2: Duplicate and Delayed Events**, predict which deliveries apply
+before running. Move version 16 to the **end** of `deliveries` and rerun that
+cell. The final state should remain `closed`, version 18. Set
+`ENFORCE_VERSION = False`, rerun, and observe the incorrect regression. Restore
+`True` and rerun. Each run starts with the same version-16 projection.
 
-for event in deliveries:
-    if event["source_version"] <= projection["source_version"]:
-        print("Ignore old or duplicate event:", event["event_id"])
-    else:
-        projection["status"] = event["status"]
-        projection["source_version"] = event["source_version"]
-        projection["last_event_id"] = event["event_id"]
-        print("Apply:", event["event_id"])
-    print("Resident now sees:", projection["status"], projection["source_version"])
-```
-
-Predict which deliveries apply before running. Then move version 16 to the **end**
-of the list and rerun from the first line. The final state should remain
-`closed`, version 18. Temporarily replace the condition with `if False:` to
-simulate a consumer that accepts every event. Observe the incorrect regression,
-then restore the version guard.
+Version 18 represents a later accepted update in the experiment, after the
+version-17 observation in the incident above. In Section 3, use the reconciliation
+example to identify a broader check before closing the incident. It demonstrates
+why three source rows and three projection records can still disagree.
 
 This model assumes one ordered version sequence **per ticket** and events that
 contain the complete projected state. If events only contain changes such as

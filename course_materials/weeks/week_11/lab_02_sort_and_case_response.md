@@ -1,11 +1,13 @@
 # Lab 2: Sort Performance and Inventory Case Response
 
-Connect a guided query-plan exercise to a real application design case and write a
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_11/lab_02_sort_and_case_response.md)
+
+Connect a guided sort-performance exercise to a real application design case and write a
 short workplace-ready recommendation.
 
 This is individual work completed in class. Submit one Brightspace text response.
 
-## 1. Test a Sort Index
+## 1. Improve a Sort
 
 Complete [Improving Performance of $sort stages (Lab Only)](https://learn.mongodb.com/courses/improving-performance-of-sort-stages-lab-only).
 
@@ -45,6 +47,24 @@ Write 200-300 words in Brightspace using this structure:
 Distinguish what the presenter actually demonstrates from a change you would
 propose. For example, an index you recommend is not automatically an index shown
 in the video. A timestamp or identifiable scene makes your example easy to locate.
+
+**If the video is unavailable:** use this course-authored fictional case instead
+and label your response "Written case fallback." Do not describe it as something
+shown in the video.
+
+A small retailer keeps one inventory document per product and store location.
+The shopping page reads that document to display available stock. Orders live in
+a separate collection and reference the product and location IDs. When a sale
+occurs, the order service sends an event with a unique event ID. A background
+worker receives the event and updates the inventory quantity. Delivery can be
+delayed or retried: for a short period the shopping page can show an old quantity,
+and a repeated event must not subtract the same sale twice. The retailer wants
+fast stock lookups and a history of changes it can investigate.
+
+Use the same four-part, 200-300-word response. For the specific example, cite a
+fact from this written case instead of a video timestamp. Explain one benefit
+and one operational risk of the design; distinguish a proposed improvement from
+what the case already specifies. This replaces the video response, not adds to it.
 
 **Submit:** in one Brightspace text submission, paste the redacted lab completion image and
 the response. Do not create or upload a Markdown file.

@@ -1,5 +1,7 @@
 # Lab: Can We Recover a Working Database?
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_08/lab_01_backup_restore.md)
+
 A backup file exists. Can it actually recreate the database's records and rules?
 Restore it somewhere separate and test the result.
 

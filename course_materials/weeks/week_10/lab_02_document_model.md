@@ -1,5 +1,7 @@
 # Lab 2: Design the Ticket Page
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_10/lab_02_document_model.md)
+
 A resident opens one ticket page to see its status and latest events. Staff also
 need to update the resident's contact details once, without finding every ticket
 that ever mentioned that resident. Design documents for those two requirements.
@@ -25,7 +27,7 @@ complete the design task; do not invent a completion score.
 
 Use ticket **1003** and its three events from the
 [Week 9 CSV-to-JSON case](../week_09/lab_01_csv_to_json.md). Start with one of your
-Week 9 designs or the worked shapes in [Chapter 10](../../../Operating_Cloud_Databases.pdf#page=96).
+Week 9 designs or the worked shapes in [Chapter 10](../../../Operating_Cloud_Databases.pdf#page=101).
 
 **New requirement:** the ticket page shows the **latest two events**, newest
 first, while the system retains all three current events and future history.

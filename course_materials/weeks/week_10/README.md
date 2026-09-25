@@ -16,7 +16,7 @@ together?
 
 ## Before Class: Assigned Reading
 
-Use [Chapter 10: MongoDB Models the Way an Application Reads](../../../Operating_Cloud_Databases.pdf#page=96).
+Use [Chapter 10: MongoDB Models the Way an Application Reads](../../../Operating_Cloud_Databases.pdf#page=101).
 
 - **Before Day 1:** read the connection, BSON, CRUD, and nested/array-query sections. Pay attention to whether a listing is shell JavaScript or notebook Python.
 - **Before Day 2:** read from **Single-Document Atomicity Shapes Modeling** through **More Than One Model Can Be Valid**. Use the workload to explain embedding and referencing.
@@ -28,7 +28,7 @@ unless the weekly lab assigns it.
 ## Class Materials
 
 - [Atlas MQL and modeling notebook](../../notebooks/04_atlas_mql_modeling.ipynb)
-- [Open Colab](https://colab.research.google.com/), then **File > Upload notebook** using the downloaded file above.
+- [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lolusername/CST4714_OER/blob/main/course_materials/notebooks/04_atlas_mql_modeling.ipynb) for Lab 1; save a working copy in Drive.
 - [Week 10 student deck](week_10_mql_document_modeling.pptx)
 - [Week 10 PDF handout](week_10_mql_document_modeling.pdf)
 - [Week 10 transcript](week_10_mql_document_modeling_transcript.md)
@@ -46,8 +46,14 @@ boundary is the specific lesson, not a claim that different titles mean new work
 
 ## Day 1: Basic MQL in a Safe Collection
 
-Use **slides 1-17**. The instructor models filter, projection, nested fields, array queries, update
-operators, write-result counts, and exact cleanup.
+Use **slides 1-17**. Start with the notebook's SQL-to-MongoDB comparison: the
+same six tickets, the same question, and the same answer through different
+query notation. The instructor then models nested fields, arrays, update
+operators, and write-result counts.
+
+Students adapt the worked filter into an active lighting-and-sanitation queue,
+rather than choosing an arbitrary code change. A resolved high-priority ticket
+makes the difference between category, priority, and current workload visible.
 
 Complete [Lab 1: Query and change documents safely](lab_01_atlas_mql.md).
 

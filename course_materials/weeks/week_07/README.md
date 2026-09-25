@@ -16,7 +16,7 @@ benefit is worth the cost?
 
 ## Before Class: Assigned Reading
 
-Use [Chapter 7: Performance Work Begins With Measurement](../../../Operating_Cloud_Databases.pdf#page=64).
+Use [Chapter 7: Performance Work Begins With Measurement](../../../Operating_Cloud_Databases.pdf#page=68).
 
 - **Before Day 1:** read through **Selectivity Explains Many Scan Decisions**, including the actual plan excerpt and row-flow diagram.
 - **Before Day 2:** read the B-tree, partial-index, cost, and worked-experiment sections. An improvement must preserve the returned ticket IDs.

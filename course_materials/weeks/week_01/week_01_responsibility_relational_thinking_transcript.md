@@ -233,7 +233,7 @@ The relational vocabulary gives us a way to describe the data precisely. One tic
 
 Use those ideas to finish the single individual lab in Brightspace. Its required response is the short request trace and the explanation based on the supplied rows, including the prediction after the assignment changes. You do not need to create a GitHub repository, install a database, or submit a second reflection for this exercise.
 
-Next week provides a substantial SQL review. We will write filters, work carefully with NULL, compare inner and outer joins, and construct summaries whose counts mean what we intend. We will also practice changing data inside a transaction and rolling the practice change back. The weekly guide identifies the assigned reading. Read Chapter 1 and the opening relational-model sections of Chapter 2 in the textbook PDF. The weekly guide also links optional PostgreSQL readings for another explanation of these ideas.
+Next week provides a substantial SQL review. We will write filters, work carefully with NULL, compare inner and outer joins, and construct summaries whose counts mean what we intend. We will also practice changing data inside a transaction and rolling the practice change back. The weekly guide identifies the assigned reading. In the complete course package that includes the relevant sections of our textbook. The Week 1-only package provides free PostgreSQL readings without requiring access to the unpublished book.
 
 [Sources]
 - Course-authored Week 1 lab and weekly guide

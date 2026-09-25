@@ -9,7 +9,7 @@
 | **Class meetings** | Two 100-minute meetings in most weeks |
 | **Section, time, and room** | Check the current listing in CUNYfirst and Brightspace |
 | **Course site** | [CUNY Brightspace](https://brightspace.cuny.edu/) |
-| **Contact and office hours** | Email: abarreda@citytech.cuny.edu. Office hours: posted in Brightspace. |
+| **Contact and office hours** | abarreda@citytech.cuny.edu; office hours posted in Brightspace |
 
 ## Course Description
 
@@ -196,8 +196,8 @@ assignment or follow the submission update I post in Brightspace.
 
 ## Communication
 
-Check Brightspace announcements and your City Tech email regularly. Use the
-contact information posted in Brightspace and include `CST4714`, your section,
+Check Brightspace announcements and your City Tech email regularly. Email
+abarreda@citytech.cuny.edu and include `CST4714`, your section,
 and a useful subject line in your message. I normally respond within two
 business days.
 

@@ -15,7 +15,7 @@ whether an index supports a filter and sort?
 
 ## Before Class: Assigned Reading
 
-Use [Chapter 11: MongoDB Operations Connect Pipelines, Rules, and Indexes](../../../Operating_Cloud_Databases.pdf#page=109).
+Use [Chapter 11: MongoDB Operations Connect Pipelines, Rules, and Indexes](../../../Operating_Cloud_Databases.pdf#page=116).
 
 - **Before Day 1:** read the pipeline and validation sections. Trace the four-ticket case and the misleading equal totals after unwind.
 - **Before Day 2:** read from **An Index Is an Ordered Access Path for a Workload** through **Validation and Indexing Solve Different Problems**. Use these ideas in the performance lab and case-study response.
@@ -27,7 +27,7 @@ unless the weekly lab assigns it.
 ## Class Materials
 
 - [Aggregation and validation notebook](../../notebooks/07_aggregation_validation.ipynb)
-- [Open Colab](https://colab.research.google.com/), then **File > Upload notebook**
+- [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lolusername/CST4714_OER/blob/main/course_materials/notebooks/07_aggregation_validation.ipynb) for Lab 1; save a working copy in Drive.
 - [Week 11 student deck](week_11_aggregation_validation_indexes.pptx)
 - [Week 11 PDF handout](week_11_aggregation_validation_indexes.pdf)
 - [Week 11 transcript](week_11_aggregation_validation_indexes_transcript.md)

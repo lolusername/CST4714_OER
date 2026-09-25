@@ -25,7 +25,8 @@ unless the weekly lab assigns it.
 
 ## Class Materials
 
-- [Metro Support setup](../../datasets/metro_support/postgres_setup.sql)
+- [First PostgreSQL session and data loading](../../datasets/metro_support/README.md#first-postgresql-session)
+- [Metro Support setup SQL](../../datasets/metro_support/postgres_setup.sql)
 - [Week 3 student deck](week_03_schemas_constraints_integrity.pptx)
 - [Week 3 PDF handout](week_03_schemas_constraints_integrity.pdf)
 - [Week 3 transcript](week_03_schemas_constraints_integrity_transcript.md)
@@ -37,6 +38,11 @@ and resolved tickets, including categories with no resolutions. Then we review
 schema names, data types, keys, and why one current contact fact belongs in one
 place. We query `information_schema` and PostgreSQL catalogs to compare the
 intended design with the definitions the server actually stores.
+
+Start with the linked **First PostgreSQL session** walkthrough. It explains the
+Supabase SQL Editor, includes a no-account browser PostgreSQL option, and shows
+how to locate the loaded tables. This replaces the DuckDB environment used for
+Week 2's SQL review; it does not add another assignment.
 
 Complete [Lab 1: SQL clinic and schema X-ray](lab_01_sql_clinic_schema_xray.md).
 

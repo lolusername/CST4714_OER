@@ -4,31 +4,25 @@
 
 This catalog describes the educational resources created or adapted for
 *Operating Cloud Databases*. It is the authoritative inventory of course OER.
-This repository contains the teaching collection, not fellowship administration
-or private grading records. [Attributions](ATTRIBUTIONS.md) distinguish original
-and adapted material from linked vendor references. Vendor-owned presentations
-are not distributed in this repository.
+Administrative fellowship records remain private. Free vendor references
+are identified in the attributions and are not claimed as authored OER.
 
-- **Publication inventory date:** September 11, 2026
+- **Inventory date:** September 25, 2026
 - **Package license:** original instructional prose and media CC BY-NC-SA 4.0;
   original code MIT; original synthetic data CC0. Source-specific notices control
   adapted material.
 
 ## Status Language
 
-- **Draft built:** the resource exists and is included in this public teaching
-  draft. The textbook is PDF-only; companions remain editable. This status does
-  not certify technical correctness, visual quality, accessibility, classroom
-  effectiveness, external peer review, or institutional approval.
-- **In production:** a planned resource whose files are not yet built. None of
-  the counted resources below is only a specification.
+- **Draft built:** the editable content exists. This status does not certify
+  technical correctness, visual quality, accessibility, or classroom effectiveness.
+  The current edition is published here for teaching and adaptation. Local
+  technical tests and visual reviews were performed; hosted Colab/cloud
+  end-to-end testing, accessibility certification, and independent peer
+  review are not claimed. This is not an institutional deposit or approval.
+- **In production:** the item is part of the approved scope but is not counted as
+  a completed fellowship deliverable.
 - **External:** the item costs students nothing but is not course-created OER.
-
-Resource-specific technical and visual review notes below summarize the prior
-authoring checks; they are not claims that every cloud path was rerun for this
-publication. Later-week alignment and comprehensive accessibility review remain
-open. Publication-specific checks cover package integrity, relative links,
-notebook syntax, rights boundaries, and the PDF's companion links.
 
 ## Created OER at a Glance
 
@@ -37,7 +31,7 @@ notebook syntax, rights boundaries, and the PDF's companion links.
 | Open-text modules | 15 | 0 | one coherent relational-to-document progression built around database reasoning and operations |
 | Weekly student guides | 15 | 0 | two-day, lab-first learning sequences with retrieval, worked examples, and transfer |
 | Individual in-class labs | 24 | 0 | one manageable submission per lab; no group work or paid dependency |
-| Educational notebooks | 7 | 0 | executable instruction with credential-safe cloud paths and open offline fallbacks |
+| Educational notebooks | 11 | 0 | executable instruction with credential-safe cloud paths and open offline fallbacks |
 | Data packages | 3 | 0 | two original synthetic cases and one documented public-data transformation |
 | Canonical major projects | 2 | 0 | one midterm operations case and one beginner cloud-database final project |
 | Assessment resources | 6 files | 0 | diagnostic/post inventory, retrieval bank, writing prompts, common rubrics, and assessment map |
@@ -53,37 +47,36 @@ Fourteen weekly guides include an optional, ungraded industry extension. Week 1
 uses its single integrated case without another extension. These embedded choices
 add no submission and are not extra labs in the inventory count.
 
-## OER 1: Open Textbook and Lab Manual
+## OER 1: Standalone Open Textbook
 
 The 15 modules are not a collection of vendor tutorials. Together they form an
 original course narrative: define an operating question, model the mechanism,
 make one controlled change, interpret the result, and state the tradeoff.
+The book teaches independently of the course: all scheduling, graded lab
+directions, and submission requirements belong in the separate weekly materials.
 
 | ID | Module | Original educational contribution | Status |
 |---|---|---|---|
 | T01 | [How Database-Backed Applications Work](../Operating_Cloud_Databases.pdf#page=6) | request-path model connecting clients, APIs, identity, DBMSs, storage, and managed platforms | Draft built |
 | T02 | [Relational Model, Algebra, and SQL](../Operating_Cloud_Databases.pdf#page=16) | major re-entry bridge from mathematical operations to result-grain checks and safe SQL | Draft built |
 | T03 | [Schema and Integrity](../Operating_Cloud_Databases.pdf#page=28) | Metro Support schema audit and expected-failure verification | Draft built |
-| T04 | [Views and Safe Change](../Operating_Cloud_Databases.pdf#page=38) | identity behavior, backward-compatible migration, and honest treatment of unknown historical values | Draft built |
-| T05 | [Transactions and Concurrency](../Operating_Cloud_Databases.pdf#page=47) | two-session model connecting ACID, MVCC, locks, symptoms, and diagnosis | Draft built |
-| T06 | [Security](../Operating_Cloud_Databases.pdf#page=56) | actor-action-resource matrix and allowed/denied test pattern | Draft built |
-| T07 | [Performance](../Operating_Cloud_Databases.pdf#page=64) | question-plan-hypothesis-change-remeasure workflow | Draft built |
-| T08 | [Backup and Recovery](../Operating_Cloud_Databases.pdf#page=72) | free-tier-accurate logical restore and verification framework | Draft built |
-| T09 | [NoSQL and JSON](../Operating_Cloud_Databases.pdf#page=82) | NoSQL history and model comparison, JSON choices, graph theory, and vector similarity | Draft built |
-| T10 | [MQL and Document Modeling](../Operating_Cloud_Databases.pdf#page=96) | complete referenced ticket-page reads, authoritative contact corrections, retained versus displayed history, and growth tradeoffs | Revised draft; actual shell examples tested locally |
-| T11 | [MongoDB Operations](../Operating_Cloud_Databases.pdf#page=109) | aggregation, validation, indexing, and explain measurements in one workload | Draft built |
-| T12 | [Reliability](../Operating_Cloud_Databases.pdf#page=118) | promise-mechanism-failure-verification reasoning | Draft built |
-| T13 | [Scale](../Operating_Cloud_Databases.pdf#page=128) | beginner capacity and shard-key reasoning grounded in measurable distributions | Draft built |
-| T14 | [Polyglot Systems](../Operating_Cloud_Databases.pdf#page=137) | source-of-truth, synchronization, and incident-boundary analysis | Draft built |
-| T15 | [Professional Communication](../Operating_Cloud_Databases.pdf#page=146) | translation from technical decisions and results to portfolio and interview language | Draft built |
+| T04 | [Views and Safe Change](../Operating_Cloud_Databases.pdf#page=39) | identity behavior, backward-compatible migration, and honest treatment of unknown historical values | Draft built |
+| T05 | [Transactions and Concurrency](../Operating_Cloud_Databases.pdf#page=48) | two-session model connecting ACID, MVCC, locks, symptoms, and diagnosis | Draft built |
+| T06 | [Security](../Operating_Cloud_Databases.pdf#page=58) | actor-action-resource matrix and allowed/denied test pattern | Draft built |
+| T07 | [Performance](../Operating_Cloud_Databases.pdf#page=68) | question-plan-hypothesis-change-remeasure workflow | Draft built |
+| T08 | [Backup and Recovery](../Operating_Cloud_Databases.pdf#page=76) | free-tier-accurate logical restore and verification framework | Draft built |
+| T09 | [NoSQL and JSON](../Operating_Cloud_Databases.pdf#page=86) | NoSQL history and model comparison, JSON choices, graph theory, and vector similarity | Draft built |
+| T10 | [MQL and Document Modeling](../Operating_Cloud_Databases.pdf#page=101) | complete referenced ticket-page reads, authoritative contact corrections, retained versus displayed history, and growth tradeoffs | Revised draft; actual shell examples tested locally |
+| T11 | [MongoDB Operations](../Operating_Cloud_Databases.pdf#page=116) | aggregation, validation, indexing, and explain measurements in one workload | Draft built |
+| T12 | [Reliability](../Operating_Cloud_Databases.pdf#page=125) | promise-mechanism-failure-verification reasoning | Draft built |
+| T13 | [Scale](../Operating_Cloud_Databases.pdf#page=140) | beginner capacity and shard-key reasoning grounded in measurable distributions | Draft built |
+| T14 | [Polyglot Systems](../Operating_Cloud_Databases.pdf#page=153) | source-of-truth, synchronization, and incident-boundary analysis | Draft built |
+| T15 | [Professional Communication](../Operating_Cloud_Databases.pdf#page=165) | translation from technical decisions and results to portfolio and interview language | Draft built |
 
-The [complete textbook](../Operating_Cloud_Databases.pdf) is a 161-page,
-15-chapter PDF with conventional mathematical notation, labeled code listings,
-diagrams, dated and redacted cloud screenshots, a notation glossary, and
-reusable technical templates. The 15 chapters are the text modules counted
-above. Earlier editions and Markdown, Word, HTML, and EPUB book sources or
-exports are deliberately not included. The companion [original diagram
-library](figures/README.md) retains editable DOT/SVG sources for reuse.
+The current textbook contains 190 pages and 15 chapters, with equations,
+labeled code, diagrams, redacted platform screenshots, a notation glossary,
+and technical appendices. It is published here in PDF form only. Its
+chapters are the 15 text modules, not an additional set of deliverables.
 
 ## OER 2: Weekly Guides and Individual Labs
 
@@ -105,10 +98,10 @@ one submission. Every lab is individual.
 | L16 | Week 9: two JSON representations of the same selected ticket facts, with an access-pattern explanation | 1 | Revised draft; paired book/deck examples and lab rows checked against the CSVs |
 | L17-L18 | Week 10: exact CRUD and array experiments; a latest-two-event page with retained history and shared contact details | 2 | Revised draft; tested notebook and distinct instructor/student University lessons |
 | L19-L20 | Week 11: diagnose a misleading summary and test a date rule; guided sort lab and inventory design response | 2 | Revised draft; tested notebook and distinct instructor demonstration align with the revised deck |
-| L21-L22 | Week 12: confirmation and recovery-point decisions; diagnose and repair a misleading MongoDB restore | 2 | Revised lab draft; notebook tested, slide alignment still pending |
-| L23 | Week 13: public-data integration and capacity analysis | 1 | Draft built |
-| L24 | Week 14: polyglot incident analysis | 1 | Draft built |
-| L25 | Week 15: public GitHub concept project and career explanation | 1 | Draft built |
+| L21-L22 | Week 12: confirmation and recovery-point decisions; diagnose and repair a misleading MongoDB restore | 2 | Revised draft; tested notebook and revised 30-slide deck align |
+| L23 | Week 13: public-data integration and capacity analysis | 1 | Revised draft; SQLite, local MongoDB, and local PostgreSQL paths tested |
+| L24 | Week 14: polyglot incident analysis | 1 | Revised draft; local transaction and delivery experiment with one Brightspace response |
+| L25 | Week 15: individual GitHub concept guide and career explanation | 1 | Revised draft; two work sections, one README sufficient, public or instructor-accessible submission |
 
 L02 was retired when Week 1 became one integrated lab. It is not counted as an
 additional resource. The remaining historical IDs stay stable.
@@ -124,11 +117,15 @@ the OER contribution.
 |---|---|---|---|---|
 | N01 | [Relational and SQL Review](notebooks/01_relational_sql_review.ipynb) | predicts and executes relational algebra, joins, grouping, set operations, and rollback | DuckDB runs locally or in Colab | Draft built |
 | N02 | [PostgreSQL Transactions and Locks](notebooks/02_postgres_transactions_locks.ipynb) | interprets a two-session concurrency incident | credential-safe PostgreSQL path plus static incident fallback | Draft built |
-| N03 | [PostgreSQL Backup and Restore](notebooks/03_postgres_backup_restore.ipynb) | explains Python/tool/SQL layers, restores a real archive, compares known values, and tests the intended constraint failure | disposable local PostgreSQL; separate optional Supabase connection reference | Revised draft; local and Linux root/sudo paths tested, not hosted Colab |
+| N03 | [PostgreSQL Backup and Restore](notebooks/03_postgres_backup_restore.ipynb) | explains Python/tool/SQL layers, restores a real archive, compares known values, and tests the intended constraint failure | disposable local PostgreSQL; separate optional Supabase connection reference | Revised draft; local, Linux root/sudo, and both ticket choices in hosted Colab tested; not hosted Supabase recovery |
 | N04 | [Atlas MQL and Modeling](notebooks/04_atlas_mql_modeling.ipynb) | teaches direct CRUD, array counterexamples, repeat-write counts, exact cleanup, and model decisions | hidden Atlas credential with temporary runtime-IP rule, or `mongomock` | Revised draft; 96 local/repeated/failure checks, not hosted Atlas or Colab |
 | N05 | [MongoDB Logical Recovery](notebooks/05_mongodb_logical_recovery.ipynb) | repairs a wrong document from a verified artifact, checks typed values, and reconstructs omitted rules | runtime Atlas credential or `mongomock`; server schema trace labeled in local mode | Revised draft; both student choices and failure cases tested locally |
-| N06 | [Public Data, Capacity, and Integration](notebooks/06_public_data_capacity_integration.ipynb) | evaluates a public source, measures key distributions, and loads idempotently | Atlas, PostgreSQL, or SQLite path | Draft built |
+| N06 | [Public Data, Capacity, and Integration](notebooks/06_public_data_capacity_integration.ipynb) | evaluates a public source, measures key distributions, and loads idempotently | Atlas, PostgreSQL, or SQLite path | Revised draft; 125 local branch and failure checks, not hosted Atlas, Supabase, or Colab |
 | N07 | [Aggregation and Validation](notebooks/07_aggregation_validation.ipynb) | exposes misleading equal totals after unwind; adds urgency and newest date; tests valid, text, and missing dates | verified-TLS Atlas path with temporary runtime-IP rule, or local aggregation with labeled validation trace | Revised draft; 91 local/repeated/failure checks, not hosted Atlas or Colab |
+| N08 | [Polyglot Incident](notebooks/08_polyglot_incident.ipynb) | connects actual transaction rollback, complete-state event ordering, and value-based reconciliation | SQLite and a clearly labeled Python projection model; no accounts required | Revised draft; repeated and reordered delivery cases tested locally |
+| N09 | [Four Tickets, Two Different Totals](notebooks/09_synthesis_review.ipynb) | integrates result populations, NULL behavior, a controlled change, JSON grouping, and value-based restore checks | real in-memory SQLite and Python; MQL is a labeled reference | Revised draft; repeated execution, student variants, and failure paths checked in the 125-check Week 15 suite |
+| N10 | [Views and Safe Migration](notebooks/03_views_identity_migration.ipynb) | walks through views, identity gaps, and a controlled migration | disposable local PostgreSQL in Colab or Jupyter | Supplementary worked example |
+| N11 | [Reliable SQL Reports](notebooks/04_reliable_reporting.ipynb) | compares result grain, conditional counts, and latest-event selection | disposable local PostgreSQL in Colab or Jupyter | Supplementary worked example |
 
 Notebooks never contain course credentials. Cloud secrets are entered at runtime,
 and outputs are checked before publication.
@@ -139,7 +136,7 @@ and outputs are checked before publication.
 |---|---|---|---|
 | D01 | [Metro Support](datasets/metro_support/README.md) | original relational service-desk case with users, tickets, events, and PostgreSQL setup | CC0; Draft built |
 | D02 | [Mini Inventory](datasets/mini_inventory/README.md) | original small CSV case for alternative JSON/document designs | CC0; Draft built |
-| D03 | [CISA KEV Teaching Sample](datasets/cisa_kev_sample/README.md) | 75-record, field-reduced, versioned transformation of an official U.S. government feed | CC0 source data; transformation code MIT; Draft built |
+| D03 | [CISA KEV Teaching Sample](datasets/cisa_kev_sample/README.md) | 75-record, field-reduced, versioned transformation of an official U.S. government feed | source terms retained; transformation code MIT; Draft built |
 
 D03 is not described as an original dataset. Its README records the source,
 retrieval metadata, transformation, omissions, safety limits, and applicable
@@ -163,13 +160,13 @@ notes are not OER and are not included in the public package.
 
 ## OER 6: Student-Facing Slides and Study Formats
 
-The package includes 15 PowerPoint decks containing 321 authored slides. Each
+The package includes 15 PowerPoint decks containing 380 authored slides. Each
 slide has notes reproduced in a matching structured-text transcript, and every
-deck has a PDF handout. Weeks 1-11 now have substantively revised student-facing
-instruction and word-for-word educational scripts. Their 262 slides and PDF
-pages have been individually reviewed. The remaining 59 slides in Weeks 12-15
-still need the same review against revised labs and book chapters; older notes
-or visual checks do not certify the new teaching sequence. The
+deck has a PDF handout. All 15 weeks now have substantively revised student-facing
+instruction and word-for-word educational scripts. Their 380 slides and PDF
+pages have been individually reviewed, with prior observations carried forward
+only for byte-identical images. This establishes the recorded content and visual
+review, not desktop PowerPoint compatibility or accessibility certification. The
 existing PDFs provide extractable text. Earlier automated inspection found
 limited tag semantics; each revised export still needs semantic and reading-order
 review. The handouts are therefore not certified accessible PDFs. The transcript
@@ -189,10 +186,10 @@ review still required.
 | S09 | worked key-value and wide-column patterns, directed traversal, cosine/distance calculations, JSON syntax and interoperability, complete paired designs, and GitHub/Atlas orientation | 32 | [PPTX](weeks/week_09/week_09_nosql_models_json.pptx), [PDF](weeks/week_09/week_09_nosql_models_json.pdf), [transcript](weeks/week_09/week_09_nosql_models_json_transcript.md) | Revised draft; 34 local example checks and all slide/PDF pages reviewed |
 | S10 | Atlas connection layers, actual Python CRUD and array results, repeat-write counts, atomic updates, referenced page reads, and growing histories | 28 | [PPTX](weeks/week_10/week_10_mql_document_modeling.pptx), [PDF](weeks/week_10/week_10_mql_document_modeling.pdf), [transcript](weeks/week_10/week_10_mql_document_modeling_transcript.md) | Revised draft; 69 local slide/guide checks and all slide/PDF pages reviewed |
 | S11 | SQL-to-pipeline bridge, exact four-ticket results, equal-total identity trap, BSON date counterexamples, measured compound-index work, and case writing | 28 | [PPTX](weeks/week_11/week_11_aggregation_validation_indexes.pptx), [PDF](weeks/week_11/week_11_aggregation_validation_indexes.pdf), [transcript](weeks/week_11/week_11_aggregation_validation_indexes_transcript.md) | Revised draft; 79 exported-example checks and all slide/PDF pages reviewed |
-| S12 | replication, read/write settings, partition choices, Atlas plan boundaries, and logical recovery | 17 | [PPTX](weeks/week_12/week_12_mongodb_reliability.pptx), [PDF](weeks/week_12/week_12_mongodb_reliability.pdf), [transcript](weeks/week_12/week_12_mongodb_reliability_transcript.md) | Draft built |
-| S13 | capacity analysis, replication versus sharding, shard-key risk, and safe integration | 15 | [PPTX](weeks/week_13/week_13_scale_integration.pptx), [PDF](weeks/week_13/week_13_scale_integration.pdf), [transcript](weeks/week_13/week_13_scale_integration_transcript.md) | Draft built |
-| S14 | polyglot ownership, transactional outbox, idempotency, reconciliation, and incident repair | 13 | [PPTX](weeks/week_14/week_14_polyglot_incident.pptx), [PDF](weeks/week_14/week_14_polyglot_incident.pdf), [transcript](weeks/week_14/week_14_polyglot_incident_transcript.md) | Draft built |
-| S15 | integrated review, publication safety, portfolio writing, and interview communication | 14 | [PPTX](weeks/week_15/week_15_synthesis_careers.pptx), [PDF](weeks/week_15/week_15_synthesis_careers.pdf), [transcript](weeks/week_15/week_15_synthesis_careers_transcript.md) | Draft built |
+| S12 | replication, read/write settings, partition choices, Atlas plan boundaries, and logical recovery | 30 | [PPTX](weeks/week_12/week_12_mongodb_reliability.pptx), [PDF](weeks/week_12/week_12_mongodb_reliability.pdf), [transcript](weeks/week_12/week_12_mongodb_reliability_transcript.md) | Revised draft; 62 exported-example checks and all slide/PDF pages reviewed |
+| S13 | capacity analysis, replication versus sharding, shard-key risk, and safe integration | 32 | [PPTX](weeks/week_13/week_13_scale_integration.pptx), [PDF](weeks/week_13/week_13_scale_integration.pdf), [transcript](weeks/week_13/week_13_scale_integration_transcript.md) | Revised draft; 125 exported-example checks and all slide/PDF pages reviewed |
+| S14 | polyglot ownership, transactional outbox, idempotency, reconciliation, and incident repair | 30 | [PPTX](weeks/week_14/week_14_polyglot_incident.pptx), [PDF](weeks/week_14/week_14_polyglot_incident.pdf), [transcript](weeks/week_14/week_14_polyglot_incident_transcript.md) | Revised draft; 125 exported-example checks and all slide/PDF pages reviewed |
+| S15 | worked SQL review, rollback and restore counterexamples, JSON/MQL comparison, GitHub concept writing, and interview communication | 26 | [PPTX](weeks/week_15/week_15_synthesis_careers.pptx), [PDF](weeks/week_15/week_15_synthesis_careers.pdf), [transcript](weeks/week_15/week_15_synthesis_careers_transcript.md) | Revised draft; 125 example/content checks and all slide/PDF pages reviewed |
 
 ## OER 7: Public Adoption and Implementation Materials
 
@@ -214,7 +211,7 @@ the created-OER totals:
 
 - fellowship plans, schedules, evaluation protocols, and administrative reports;
 - free vendor platforms, vendor courses, official documentation, and account
-  services linked from the weekly guides and attribution file;
+  services linked in `external_resources/INDEX.md`;
 - the underlying CISA source records, which are documented as a public-data
   transformation rather than an original course dataset;
 - private student records, private grading notes, answer keys, credentials, and
@@ -222,7 +219,7 @@ the created-OER totals:
 - temporary authoring, rendering, inspection, or slide-generation files used to
   produce and validate the published formats.
 
-## Instructional Design and Reuse
+## Educational Contributions
 
 - **The package is one course, not a folder of unrelated tutorials.** One Metro
   Support case and one question-model-test cycle connect relational review, PostgreSQL
@@ -241,13 +238,13 @@ the created-OER totals:
   but does not establish that a student operated a live service. Vendor courses
   remain linked free resources and are not presented as authored OER.
 - **The slide collection is a substantial authored teaching resource.** Fifteen
-  decks contain 321 draft slides, native diagrams, redacted platform
+  decks contain 380 draft slides, native diagrams, redacted platform
   screenshots, and code examples,
   complete word-for-word scripts in notes, exact transcripts, and PDF handouts.
   The current revision replaces generic teaching directions with actual spoken
-  explanations. Weeks 1-10 have completed this alignment and visual export review;
+  explanations. Weeks 1-15 have completed this alignment and visual export review;
   image alt text and semantic reading order still need accessibility work.
-- **Open executable materials make operations inspectable.** Seven notebooks,
+- **Open executable materials make operations inspectable.** Eleven notebooks (nine core and two supplementary),
   PostgreSQL setup files, synthetic data, a documented CISA transformation, and
   credential-safe examples let adopters reproduce query, concurrency, recovery,
   modeling, and integration workflows.
@@ -255,18 +252,19 @@ the created-OER totals:
   ask students to state a decision, interpret a result, identify a tradeoff, and name
   a limitation. The final module translates that work into portfolio and
   interview language without inflating technical scope.
-- **Editable companions support adaptation.** Guides and labs are
+- **Multiple editable formats support access.** Core prose is
   structured Markdown; spoken content is available as exact transcripts; decks
   use large, high-contrast student-facing layouts; and cloud alternatives state
   what they do and do not reproduce. PDFs are described as handouts whose
   reported tags still require a human quality and reading-order audit.
-- **Package checks are reusable.** The public checker tests inventory, relative
-  links, dataset structure, notebook syntax and output hygiene, and paired
-  presentation files. It does not execute cloud lessons or certify visual
-  quality. The adaptation checklist identifies the additional human review.
-- **Created OER and curation are counted separately.** This catalog describes
-  authored or compatibly adapted teaching resources. The attribution file
-  identifies linked external sources without counting them as original work.
+- **Package checks are reproducible.** The public checker verifies inventory,
+  relative links, dataset structure, notebook syntax and saved-output hygiene,
+  and paired presentation formats. Local execution tests and visual reviews
+  are separate checks, not cloud or accessibility certification.
+- **Created OER and curation are counted separately.** The catalog records what
+  the fellowship authored or compatibly adapted; the free-resource catalog
+  records what students may access at no cost; and the fellowship folder records
+  planning and evaluation work.
 
 ## How to Describe the OER Contribution
 
@@ -276,12 +274,9 @@ A concise project description is:
 > operations. Its original contribution is a coherent question-model-test cycle across
 > relational review, PostgreSQL administration, MongoDB document systems,
 > reliability, scaling, and career communication. The current package includes
-> 15 open-text modules, 15 weekly guides, 24 individual labs, seven drafted
-> educational notebooks, three reusable data packages, 15 student decks with 321
+> 15 open-text modules, 15 weekly guides, 24 individual labs, eleven
+> educational notebooks, three reusable data packages, 15 student decks with 380
 > slides and complete spoken scripts, 15 transcripts, 15 PDF handouts, five
 > public implementation guides, and canonical midterm and final projects. Free
 > vendor platforms and tutorials are linked separately and are not counted as
 > created OER.
-
-Use this catalog to locate and cite the teaching resources. Administrative
-reporting documents and private review records are not part of the repository.

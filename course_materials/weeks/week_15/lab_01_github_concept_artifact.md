@@ -1,32 +1,35 @@
 # Final Lab: Teach One Database Concept in GitHub
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_15/lab_01_github_concept_artifact.md)
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lolusername/CST4714_OER/blob/main/course_materials/notebooks/09_synthesis_review.ipynb)
+
 ## Purpose
 
-Create one small project that teaches or demonstrates a course concept to another
-beginner. Depth, safety, and reproducibility matter more than application size.
+Teach one course concept through a small example another beginner can understand.
+One `README.md` containing code and explanation is enough. A separate script or
+notebook is optional, and you do not need to build an application.
 
 This is individual work completed in class. Submit one URL.
 
-## 1. Choose One Concept
+## 1. Develop One Example
 
-Choose one:
+Use the [review notebook](../../notebooks/09_synthesis_review.ipynb) for a starting
+example, or choose another concept from work you completed in the course. For
+example:
 
-- relational algebra to SQL;
-- schema constraints and expected failures;
-- safe migration;
-- transaction rollback or lock diagnosis;
-- least privilege or RLS allow/deny testing;
-- `EXPLAIN` and index decision;
-- logical backup/restore verification;
-- CSV-to-JSON model comparison;
-- MQL query and write results;
-- aggregation grain;
-- schema validation;
-- replica/read/write concern decision;
-- shard-key analysis; or
-- polyglot reconciliation.
+- why a left join keeps a staff member with zero matching tickets;
+- what rollback does after a failed change;
+- why a document grouping and a staff report include different records; or
+- why matching row counts do not prove a correct restore.
 
-## 2. Build One Reproducible Project
+Make one small change to the example's records or query. Predict its result,
+run it if your example is executable, and explain what happened in your own
+words. Keep the example small enough that a reader can check it by following the
+data. A carefully reasoned static guide is also valid: label its result as
+predicted rather than claiming an execution you did not perform.
+
+## 2. Publish One Concept Guide
 
 On GitHub, choose **New repository**, give the project a descriptive name, and
 add a README. You may keep the repository private and give the instructor access.
@@ -35,31 +38,25 @@ online. Put code inside a fenced block labeled `sql`, `python`, `javascript`, or
 `json` as appropriate, preview it, and commit the change with a meaningful message.
 No terminal or local Git installation is required.
 
-Create a GitHub repository or a clearly named folder in your course repository.
-Include:
+You may instead use a clearly named folder in a repository you own. In the README,
+include the question, a code example with the few records it needs, the result,
+and an explanation of why that result follows. State the required tool or
+environment, safe run order and cleanup, and one limit of the example. These
+can be short paragraphs, not separate files or a long report.
 
-- `README.md` with purpose, prerequisites, safe run order, expected result,
-  explanation, cleanup, limitation, and sources;
-- one code file such as `.sql`, `.mongodb.js`, or `.ipynb`, **or** a detailed
-  Markdown guide with concrete code examples; and
-- only synthetic or appropriately licensed data.
+Credit any course or external source you adapt. Keep its applicable license
+notice. Use only synthetic or appropriately licensed data.
 
 Another beginner should be able to understand what one output demonstrates. Do not
 publish an answer key, a copied vendor lesson, or a full final-project repository
 unless you independently choose to make your project public.
 
-## 3. Run the Publication Safety Check
-
-Before sharing:
-
-- search every file and notebook output for passwords, URLs with credentials,
-  tokens, API keys, and private hostnames;
-- remove real personal data;
-- verify destructive commands target only a named disposable object;
-- test the documented run order or label a static explanation accurately;
-- add source and license attribution; and
-- open the URL in a private window or use instructor access to verify it can be
-  reviewed.
+Before sharing, inspect the files and any saved output for credentials or real
+personal data. Check that any change or cleanup affects only the example's
+disposable data. For a public repository, open the URL while signed out. For a
+private repository, grant the instructor access. A local Markdown/code file is
+an equivalent private submission if an account or accessibility barrier prevents
+GitHub use; contact the instructor in class rather than create another assignment.
 
 ## Submit One Thing
 

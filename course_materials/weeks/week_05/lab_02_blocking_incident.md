@@ -1,5 +1,7 @@
 # Lab 2: The Query Finished, but Which Change Survived?
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_05/lab_02_blocking_incident.md)
+
 A developer's status update waits while another session changes the same ticket.
 Releasing that session lets the update finish. Does it matter whether we commit
 or roll back the blocking transaction?

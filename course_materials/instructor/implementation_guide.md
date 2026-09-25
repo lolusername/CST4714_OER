@@ -36,9 +36,8 @@ Weeks 2-15 contain an optional industry extension. Week 1 has one integrated cas
 An extension is ungraded, adds
 no submission, and must never become an unstated prerequisite. Offer it only when
 time and interest permit; a student who uses the standard lab or equivalent
-fallback receives no penalty or reduced access to later work. The
-[learning-design references](../ATTRIBUTIONS.md#learning-design-evidence)
-identify the research basis; each weekly page describes its optional extension.
+fallback receives no penalty or reduced access to later work. The source
+attributions identify the research informing this teaching design.
 
 ## Week 1: How Applications Use Databases and Relational Re-entry
 
@@ -217,7 +216,7 @@ is weak, reteach from invalid rows and expected failures rather than definitions
 ## Week 4: Views, Identity, Introspection, and Safe Migration
 
 **Student materials:** [Week 4 guide](../weeks/week_04/README.md),
-[Chapter 4](../../Operating_Cloud_Databases.pdf#page=38),
+[Chapter 4](../../Operating_Cloud_Databases.pdf#page=39),
 [views lab](../weeks/week_04/lab_01_views_identity.md), and
 [safe migration lab](../weeks/week_04/lab_02_safe_migration.md).
 
@@ -270,7 +269,7 @@ through a small example rather than adding another paperwork requirement.
 ## Week 5: Transactions, MVCC, Locks, and Incident Communication
 
 **Student materials:** [Week 5 guide](../weeks/week_05/README.md),
-[Chapter 5](../../Operating_Cloud_Databases.pdf#page=47),
+[Chapter 5](../../Operating_Cloud_Databases.pdf#page=48),
 [transaction lab](../weeks/week_05/lab_01_transaction_outcomes.md),
 [blocking lab](../weeks/week_05/lab_02_blocking_incident.md), and
 [transactions/locks notebook](../notebooks/02_postgres_transactions_locks.ipynb).
@@ -291,8 +290,11 @@ history, before introducing the ACID vocabulary.
 - Slide 7's UPDATE matches zero rows without raising an error. Explain why the
   application must check the affected-row result before claiming an assignment.
 - Students work individually in `transaction_lab`, assigning Priya/201 and event
-  5999. They rehearse, commit, and test a failed new pair. One SQL file includes
-  their observations and explanation. Day 1 does not require two connections.
+  5999. They rehearse, commit, and test a failed new pair. Then the outdated
+  request to assign Noah/202 returns zero rows, while a SELECT still shows Priya.
+  Have students connect that result to the application's decision about whether
+  to record an event or announce success. Their observations and short developer
+  explanation stay in one SQL file. Day 1 does not require two connections.
 
 The main fixture must begin with ticket 1004 unassigned and `new`. Do not commit
 the instructor rehearsal into a student's source dataset. The lab's copy has
@@ -348,7 +350,7 @@ not enough to decide what should happen to someone else's uncommitted work.
 ## Week 6: Roles, Grants, RLS, and Secret Boundaries
 
 **Student materials:** [Week 6 guide](../weeks/week_06/README.md),
-[Chapter 6](../../Operating_Cloud_Databases.pdf#page=56),
+[Chapter 6](../../Operating_Cloud_Databases.pdf#page=58),
 [least-privilege lab](../weeks/week_06/lab_01_least_privilege.md), and
 [RLS lab](../weeks/week_06/lab_02_rls_test_harness.md).
 
@@ -471,7 +473,7 @@ equivalent permission test.
 ## Week 7: Explain Plans, Measurements, and Index Design
 
 **Student materials:** [Week 7 guide](../weeks/week_07/README.md),
-[Chapter 7](../../Operating_Cloud_Databases.pdf#page=64),
+[Chapter 7](../../Operating_Cloud_Databases.pdf#page=68),
 [plan-reading lab](../weeks/week_07/lab_01_plan_reading.md),
 [index experiment](../weeks/week_07/lab_02_index_experiment.md), and
 [performance fixture](../weeks/week_07/performance_lab_setup.sql).
@@ -573,7 +575,7 @@ plans with different table sizes/selectivities before recovery work.
 ## Week 8: Logical Backup, Verified Restore, and Midterm Integration
 
 **Student materials:** [Week 8 guide](../weeks/week_08/README.md),
-[Chapter 8](../../Operating_Cloud_Databases.pdf#page=72),
+[Chapter 8](../../Operating_Cloud_Databases.pdf#page=76),
 [backup/restore notebook](../notebooks/03_postgres_backup_restore.ipynb),
 [recovery lab](../weeks/week_08/lab_01_backup_restore.md), and the canonical
 [midterm operations case](../assignments/midterm_project.md).
@@ -660,7 +662,7 @@ Grade the connection between the result and the claim, not the length of a repor
 ## Week 9: NoSQL Evolution, Model Families, JSON, and Atlas Orientation
 
 **Student materials:** [Week 9 guide](../weeks/week_09/README.md),
-[Chapter 9](../../Operating_Cloud_Databases.pdf#page=82),
+[Chapter 9](../../Operating_Cloud_Databases.pdf#page=86),
 [CSV-to-JSON lab](../weeks/week_09/lab_01_csv_to_json.md), and the
 [Metro Support CSV data](../datasets/metro_support/README.md). The worked examples
 use ticket 1001. The assigned lab uses ticket 1003. Neither day assigns Mini
@@ -777,7 +779,7 @@ explanation, ask one read and one update question before MQL begins.
 ## Week 10: Basic MQL and Access-Pattern Modeling
 
 **Student materials:** [Week 10 guide](../weeks/week_10/README.md),
-[Chapter 10](../../Operating_Cloud_Databases.pdf#page=96),
+[Chapter 10](../../Operating_Cloud_Databases.pdf#page=101),
 [MQL notebook](../notebooks/04_atlas_mql_modeling.ipynb),
 [MQL lab](../weeks/week_10/lab_01_atlas_mql.md), and
 [document-model lab](../weeks/week_10/lab_02_document_model.md).
@@ -796,6 +798,21 @@ qualifies and 1003 does not: its priority is urgent, but its status is resolved.
 The table gives students a way to predict an answer without understanding every
 line of the fixture setup. Do not spend the class typing the entire supplied
 fixture. Explain one document, then run the prepared setup.
+
+The notebook's new SQL comparison creates a temporary three-column SQLite table
+from those same six documents. Run its complete SELECT, then the MongoDB filter
+and projection. Both return ID 1001 and status `open`. Use the familiar WHERE and
+SELECT terms to introduce the two dictionaries. SQLite is included with Python
+and the comparison closes its connection immediately; it adds no setup task.
+
+The student's variation is the active lighting-and-sanitation queue. It should
+return IDs 1006, 1002, and 1001, newest first, with priority visible. The working
+starter already selects the categories and sorts. Students add the active-status
+condition and the projected priority field. Ticket 1005 is the counterexample:
+sanitation and high priority, but already resolved. Keeping the instructor's
+high/urgent filter would also incorrectly remove 1006 and 1002. Discuss the
+question before changing the dictionary. This remains the existing lab and its
+single notebook submission.
 
 Run the notebook's connection cells before the query demonstrations. Local mode
 uses `mongomock`, which is not a MongoDB server or an Atlas deployment. It supports
@@ -973,7 +990,7 @@ growing/unbounded history example before aggregation.
 ## Week 11: Aggregation, Validation, Sort Performance, and Case Writing
 
 **Student materials:** [Week 11 guide](../weeks/week_11/README.md),
-[Chapter 11](../../Operating_Cloud_Databases.pdf#page=109),
+[Chapter 11](../../Operating_Cloud_Databases.pdf#page=116),
 [aggregation notebook](../notebooks/07_aggregation_validation.ipynb),
 [pipeline/validation lab](../weeks/week_11/lab_01_pipeline_validation.md), and
 [sort/case response lab](../weeks/week_11/lab_02_sort_and_case_response.md).
@@ -1218,8 +1235,13 @@ rebuild the pipeline on the notebook's four documents before reliability.
 
 ## Week 12: Replication, Reliability Promises, and Logical Recovery
 
+The 30-slide deck uses **slides 1-16 for Day 1** and **17-30 for Day 2**.
+Each slide has a complete spoken script in its notes. Day 1's short shell
+demonstration is optional; the state traces and the individual reasoning lab
+do not depend on a cloud account. Day 2 follows the actual notebook in order.
+
 **Student materials:** [Week 12 guide](../weeks/week_12/README.md),
-[Chapter 12](../../Operating_Cloud_Databases.pdf#page=118),
+[Chapter 12](../../Operating_Cloud_Databases.pdf#page=125),
 [reliability lab](../weeks/week_12/lab_01_reliability_decisions.md),
 [MongoDB recovery notebook](../notebooks/05_mongodb_logical_recovery.ipynb),
 [recovery lab](../weeks/week_12/lab_02_mongodb_recovery.md), and the canonical
@@ -1234,7 +1256,8 @@ rebuild the pipeline on the notebook's four documents before reliability.
 - Trace primary, secondaries, acknowledgment, election, and client interruption
   without promising zero data loss or zero downtime.
 - Students complete the reliability-decisions lab individually.
-- Introduce the final only through the canonical file and one planning checkpoint.
+- Introduce the final through its canonical file and discussion in existing
+  project notes, without collecting an additional checkpoint.
 
 ### Teaching the Read and Write Controls
 
@@ -1247,14 +1270,19 @@ failover exercise.
 |---|---|---|---|---|
 | Before submission | request absent | request absent | request absent | Nothing has been recorded yet |
 | A applies the insert | request present | not yet applied | request absent | One copy has changed; the requested majority acknowledgment is not yet established |
-| B receives and satisfies the required acknowledgment | request present | request present | request absent | A majority is available in this three-data-bearing-member example; the isolated C need not acknowledge |
+| B durably retains the oplog entry | request present | insert not yet applied to collection | request absent | In MongoDB 8.0+ with default majority journaling, A and B can satisfy majority acknowledgment before B applies the insert |
+| B applies the insert to its collection | request present | request present | request absent | B can now expose the inserted document, subject to the requested read semantics |
 | A later read uses C's older eligible state | request present | request present | request absent | A missing result can reflect lag, not loss of the acknowledged request |
 
 Explain the three controls separately before combining them. **Write concern**
 sets the acknowledgment the client waits for. **Read preference** selects
 eligible members. **Read concern** constrains the state a read may return.
 Majority read concern by itself does not make every secondary immediately
-current. A causal session orders related operations and carries the dependency
+current. Emphasize the difference between a retained oplog entry and an applied
+collection change. The acknowledgment boundary changed in MongoDB 8.0, which
+Atlas Free currently uses. The [write-concern documentation](https://www.mongodb.com/docs/manual/reference/write-concern/)
+describes that boundary; do not label acknowledgment as proof that B's collection
+already contains the insert. A causal session orders related operations and carries the dependency
 from a write to a later read. With the documented majority read and write
 concerns, a read in that session can wait for the required state instead of
 returning a pre-write answer. A timeout remains possible. Do not promise that
@@ -1394,7 +1422,7 @@ restored documents with the missing index/validator list before scaling.
 ## Week 13: Capacity, Sharding, Public Data, and Python Integration
 
 **Student materials:** [Week 13 guide](../weeks/week_13/README.md),
-[Chapter 13](../../Operating_Cloud_Databases.pdf#page=128),
+[Chapter 13](../../Operating_Cloud_Databases.pdf#page=140),
 [public-data notebook](../notebooks/06_public_data_capacity_integration.ipynb), and
 [integration lab](../weeks/week_13/lab_01_public_data_integration.md).
 
@@ -1403,45 +1431,203 @@ import evidence.
 
 ### Day 1 Arc
 
-- Retrieve tune, scale up, read replica, partition, and shard distinctions.
-- Model a sharded cluster with shards, replica sets, config servers, and `mongos`.
-- Use the CISA teaching snapshot to measure cardinality, largest-value frequency,
-  monotonic input order, and query targeting.
-- Run the notebook's deterministic range and hash simulations.
-- Students record an individual “do not shard yet” or conditional candidate
-  recommendation with evidence.
+Use slides **1-16**. Connect last week's reliability decisions to capacity: a
+replica copy and an additional shard change different parts of the system. Teach
+latency, throughput, working set, and a stated growth horizon before choosing a
+capacity option. Slide 3's synthetic trace produces a 93 ms mean and a 500 ms
+nearest-rank p95. Rank 19 maps to Python index 18. Another percentile convention
+can interpolate differently; the point is to expose the calculation rather than
+call one percentile a universal benchmark.
+
+Use the eight-ticket example on slide 9 for instructor-led reasoning. Six open
+tickets and two resolved tickets give two distinct statuses and a 75% largest
+share. Eight unique IDs give eight distinct values and a 12.5% largest share.
+Have individuals predict which property changes if all requests target one ID:
+request frequency changes, but the stored identifiers stay unique. No team or
+additional written artifact is needed.
+
+Then introduce the historical CISA dataset and work through the placement chart.
+Students use the real 75-record notebook for their own comparison. They run its
+Sections 1 and 2 and compare **cveID versus dateAdded**. They may draft their
+reasoning in the existing notebook submission area. Do not collect a separate
+Day 1 file.
+
+### Source and Measurement Reference
+
+The fixture records catalog version `2026.07.10` and retrieval on July 13, 2026.
+It selects the first 75 source records and eight fields. It is neither random nor
+current. `dateAdded` means catalog inclusion, not discovery, exploitation time,
+or infection time. `dueDate` is a source field, not an invented deadline for this
+class or a universal deadline for every organization. Counts describe selected
+catalog entries, not affected hosts or a vendor's overall security quality.
+
+| Candidate | Distinct values | Largest count | Largest share |
+|---|---:|---:|---:|
+| `cveID` | 75 | 1 | 1.33% |
+| `dateAdded` | 38 | 8 | 10.67% |
+| `vendorProject` | 42 | 16 | 21.33% |
+| vendor/product pair | 56 | 4 | 5.33% |
+
+The source includes `"SimpleHelp "` with a trailing space. The notebook exposes
+and preserves it. If a student proposes trimming labels, ask what grouping
+changes and where the transformation would be recorded. An empty CWE list stays
+empty; absence of entries is not proof that no weakness exists.
+
+The oldest 60 records establish fixed date boundaries `2026-04-22`,
+`2026-05-20`, and `2026-06-01`. All 15 later records enter bucket 3. The SHA-256
+modulo-4 rule on their CVE IDs gives counts **3, 3, 6, 3**. Hashing the vendor
+label `Microsoft` gives bucket 1 every time, including all 16 occurrences. This
+distinguishes low-cardinality repetition from increasing unique keys. These are
+fixed Python buckets, not MongoDB's hash function, balancer, or measured latency.
+
+An exact-ID filter can suit an ID-based shard key. A vendor-only filter and a
+date-window filter lack that key. A whole-collection aggregate can legitimately
+need multiple shards. A local index can reduce work on each shard without
+changing routing. A strong beginner conclusion is that the current fixture does
+not justify sharding, followed by a measurement or larger workload that would
+justify revisiting the decision. Do not require students to recommend a paid tier.
 
 ### Day 2 Arc
 
-- Retrieve source, transformation, stable key, upsert, and verification.
-- Model the notebook's simple SQLite path before showing optional Atlas and
-  PostgreSQL branches.
-- Students choose one target, enter cloud credentials only through `getpass`, load
-  idempotently, and verify count, known identifier, and grouped question.
-- Students discuss the final-project transfer prompts while working in their
-  existing project. No additional written checkpoint is collected.
+Use slides **17-32**. Begin with the following two-record instructor example,
+which is separate from students' CISA exercise. Run it in a fresh Python cell.
+Explain the primary key and proposed `excluded` row before running the loop.
+Ask for a prediction of the second count, then compare stored titles as well.
 
-**Live demonstration:** rerun the same import and show that the stable key
-preserves logical count. Compare local SQLite's process boundary with managed
-PostgreSQL and Atlas network/authentication boundaries.
+```python
+import sqlite3
 
-**Likely misconceptions:** high cardinality guarantees a good shard key, hashed
-distribution makes every query faster, Atlas Free can deploy a sharded cluster,
-and insert count proves trustworthy import.
+demo = sqlite3.connect(":memory:")
+source_rows = [(101, "Broken classroom projector"), (102, "Door lock jammed")]
+try:
+    demo.execute("CREATE TABLE tickets (id INTEGER PRIMARY KEY, title TEXT NOT NULL)")
+    for attempt in (1, 2):
+        with demo:
+            demo.executemany(
+                "INSERT INTO tickets VALUES (?, ?) "
+                "ON CONFLICT(id) DO UPDATE SET title = excluded.title",
+                source_rows,
+            )
+        print("Attempt", attempt, "count", demo.execute(
+            "SELECT count(*) FROM tickets").fetchone()[0])
+    with demo:
+        demo.execute("UPDATE tickets SET title = ? WHERE id = ?", ("Wrong title", 101))
+    observed = demo.execute("SELECT id, title FROM tickets ORDER BY id").fetchall()
+    print("Count still matches:", len(observed) == len(source_rows))
+    print("Values match:", observed == source_rows)
+finally:
+    demo.close()
+```
 
-**Equivalent path:** the versioned CISA fixture is embedded in Notebook 6, and
-SQLite is built into Python. No live feed or cloud account is required.
+Both attempts print count 2. After the deliberate change, the count comparison
+is `True` and the value comparison is `False`. The table is disposable and closes
+at the end. This makes the later 75-record check understandable without requiring
+students to copy another worked answer or intentionally corrupt their submission.
 
-**Teaching decision:** if recommendations ignore query targeting, ask students to
-route one exact-ID query and one vendor/date question before Week 14.
+Read the selected connection and import excerpts in the deck. Students then use
+Notebook 06's Section 3. `TARGET` chooses one path, not three required systems.
+The setup guard deliberately refuses a second setup while a run remains open.
+Repeat only the import cell. To switch targets, clean up first. For the unchanged
+fixture, the first import displays 0/75 and the next displays 75/75.
+
+Students run the vendor grouping, change `GROUP_FIELD` to `"product"`, and
+explain one product row. The expected first five vendor counts are Microsoft 16,
+Cisco 7, `"SimpleHelp "` 3, Ubiquiti 3, and Adobe 2. Product results are Catalyst
+SD-WAN Manager 4, Windows 4, Defender 3, SimpleHelp 3, and UniFi OS 3. The source
+comparison and the database use a defined label order to break ties.
+
+### Connection and Failure Explanations
+
+**SQLite:** the database lives in the notebook's Python process. The standard
+library and embedded source suffice after opening the notebook. Colab still
+needs internet to open; a local Jupyter session can run this path offline. The
+SQL paths use a primary key and a batch transaction. PostgreSQL uses `date` and
+`jsonb`; SQLite stores canonical date text and serialized JSON. Verification
+normalizes these representations before comparison.
+
+**Atlas:** the notebook prints the runtime's IPv4 `/32` before asking for the URI.
+Colab and a student's laptop can have different addresses. Add the printed rule,
+wait for it to become active, and use the database user's credentials from
+Connect > Drivers. A website login is not a database credential. URI-reserved
+password characters need percent encoding. A failed ping may involve network,
+DNS, cluster state, authentication, or TLS; it does not justify disabling TLS
+checks. The cell clears the URI after the attempt, but a live client retains
+authentication state until closed. Never display a real credential during the
+demonstration. The August screenshots are redacted navigation references, not
+proof of a newly tested student connection.
+
+**PostgreSQL/Supabase:** use the exact shared session-pooler details for an IPv4
+notebook network. A direct IPv6 endpoint can fail before authentication begins.
+The database password and pooler username differ from website and API credentials.
+`sslmode=require` encrypts transport; `verify-full` with the provider CA additionally
+verifies certificate and hostname. `sql.Identifier` quotes schema/column names,
+while `%s` placeholders carry values. Autocommit prevents idle transactions
+between cells; explicit `transaction()` blocks still delimit atomic operations.
+`SET LOCAL` keeps the practice search path within the transaction.
+
+**Atomicity versus idempotency:** a failed SQL batch rolls back its transaction's
+earlier writes. The Atlas loop uses separate document-atomic replacements, so
+earlier successful replacements remain if a later one fails. Retrying the same
+checked source can complete it. This is a property of these programs, not a claim
+that MongoDB lacks multi-document transactions. Replacement would erase
+application-owned annotations in the same document; our disposable collection
+contains only imported fields. A production design needs an ownership decision,
+deletion policy, source-version strategy, and concurrency policy beyond this lab.
+
+**Cleanup:** the notebook removes only this run's `kev_sample` table/collection.
+Other objects survive. PostgreSQL drops the generated schema only if empty and
+never uses CASCADE. Students separately remove any temporary Atlas runtime-IP
+rule. A closed connection does not pause a cloud project or revoke network access.
+
+### Individual Handoff and Feedback
+
+Collect one notebook in Brightspace with the changed query, results, and a short
+maintenance handoff. The imagined maintainer is a writing audience, not a partner.
+Assess whether the student uses two real measurements, interprets a product row,
+distinguishes a repeat from a reset, cites one verification result, and states a
+limitation. Do not require a screenshot, second report, word count, sharding
+matrix, new repository, or another final-project checkpoint.
+
+A concise response could explain that 75 distinct CVE IDs versus 38 dates favor
+stable exact-ID matching, while neither supplies a vendor-only routing predicate;
+the second SQLite import stayed at 75 and the known record matched all eight
+fields; Windows 4 means four selected catalog entries; the historical, nonrandom
+subset cannot establish production load. Accept a different conditional design
+when its query and assumptions are explicit. Do not grade a paid cloud choice
+higher than a correctly reasoned and tested SQLite path.
+
+Before Week 14, check whether students can explain which data is authoritative
+and what a delayed or repeated write would do. Those ideas lead directly into the
+multi-store incident. The final-project transfer prompts remain discussion only.
 
 ## Week 14: Polyglot Incident Response and Final Operations Clinic
 
 **Student materials:** [Week 14 guide](../weeks/week_14/README.md),
-[Chapter 14](../../Operating_Cloud_Databases.pdf#page=137), and
+[Chapter 14](../../Operating_Cloud_Databases.pdf#page=153), and
 [polyglot incident lab](../weeks/week_14/lab_01_polyglot_incident.md).
+Use [Notebook 08](../notebooks/08_polyglot_incident.ipynb) for the live demonstration
+and student experiment. It requires no account, package installation, or network.
 
-**Prerequisite:** relational/document modeling, evidence, recovery, and integration.
+**Prerequisite:** relational/document modeling, transactions, recovery, and integration.
+
+### Deck and Notebook Sequence
+
+The deck has a word-for-word script in each slide's Notes pane.
+
+| Slides | Use with the class |
+|---|---|
+| 1-6 | Establish ticket ownership, partial failure, event identity, and the outbox path |
+| 7-10 | Open Notebook 08 Section 1 and demonstrate rollback, commit, and the later version-18 update |
+| 11-14 | Trace the delivery loop, then let students perform the individual delayed-event experiment |
+| 15-17 | Explain the full-state assumption and the corresponding atomic MongoDB operation without requiring another cloud deployment |
+| 18-22 | Return to the supplied version-17 incident, compare the wider records in Notebook Section 3, and finish one Brightspace text response |
+| 23-28 | Begin Day 2 with access, index, restore, and demonstration checks applied to existing projects |
+| 29-30 | Individual project clinic, followed by a bounded interview explanation and the Week 15 connection |
+
+Keep slide 14 visible during the individual experiment, then resume the worked
+comparison. Slides 15-17 are explanation, not another required lab. The notebook
+setup does not need to be typed from memory. Day 2 reserves the main work period
+for individual projects rather than repeating the Day 1 incident submission.
 
 ### Day 1 Arc
 
@@ -1450,7 +1636,7 @@ route one exact-ID query and one vendor/date question before Week 14.
   copy in MongoDB. Trace identifier, version/time, and failure points.
 - Fade by presenting mismatched values and partial logs without naming the cause.
 - Students complete the incident lab individually: impact, boundary evidence,
-  diagnosis, and a duplicate/delayed-delivery experiment. The inline Python model
+  diagnosis, and a duplicate/delayed-delivery experiment. The notebook's Python model
   makes the guarded and unguarded final states visible without cloud setup.
 
 ### Day 2 Arc
@@ -1465,6 +1651,100 @@ route one exact-ID query and one vendor/date question before Week 14.
 consumer concept at a beginner level. Emphasize ownership and evidence rather than
 adding a framework.
 
+### Notebook Demonstration and Expected Results
+
+Start with the Section 1 initialization cell. Explain that the SQLite database
+runs inside Python and disappears when closed. It executes a real transaction,
+but does not represent a hosted PostgreSQL connection. Three authoritative
+tickets and an empty outbox are supplied. No student needs to write the setup
+from memory.
+
+Before the failure cell, ask what should survive if the ticket update succeeds
+but the application stops before recording an outgoing event. Run the cell.
+The exception exits `with source_db`, so the transaction rolls back before the
+handler prints the failure. From initialization, ticket 1008 remains `open` at
+version 16 and the outbox is empty. Do not describe a broad exception handler as
+the rollback mechanism: the transaction context performs the rollback.
+
+Run the successful commit. Ticket 1008 becomes `resolved` at version 17 and the
+outbox contains `evt-1008-17`. Rerun the same cell to show that the version-16
+predicate no longer matches and another event is not inserted. The update and
+event share a local transaction. Neither operation connects to MongoDB, and the
+outbox row does not establish delivery.
+
+The next cell models a later accepted `closed`, version-18 update and records
+its second event. Distinguish this later experiment from the paper incident,
+whose supplied observations stop at version 17. Students should not rewrite
+the incident timeline to claim version 18 existed at its earlier observation.
+
+Section 2 begins its projection at version 16 on every run. The guarded delivery
+trace is `resolved 17`, `resolved 17`, `resolved 17`, `closed 18`. The first 17
+and the 18 apply. The duplicate 17 and delayed 16 do not. Students move the
+version-16 event to the end, then compare `ENFORCE_VERSION = False` with `True`.
+The broken model ends `open 16`; the repaired model ends `closed 18`.
+This is the required student experiment, not a requirement to deploy messaging
+infrastructure or submit an additional notebook.
+
+Section 3 compares three authoritative tickets with three projection records.
+After the guarded experiment, the mismatches are ticket 1009 missing, ticket
+1010 with a wrong status despite equal versions, and unexpected ticket 9999.
+If students left the guard off, ticket 1008 adds a fourth mismatch. Use that
+difference diagnostically rather than supplying the expected count without
+examining the actual run. The candidate rebuild produces matching IDs and owned
+values, but does not demonstrate a concurrent live cutover.
+
+### Questions Students May Ask
+
+**Why does an event need both an ID and a version?** The event ID names one
+delivery identity. The ticket ID names the record it affects. Its source version
+orders accepted states for that ticket. None of those numbers alone proves the
+payload is correct or that a consumer applied it.
+
+**Does an outbox guarantee exactly-once delivery?** No. A relay can send and
+then stop before recording success, or a consumer can apply a change and lose
+its acknowledgment. Redelivery is a normal recovery possibility. The outbox
+protects local recording of the change and event; downstream effects still
+need repeat-safe behavior and reconciliation.
+
+**Can we always ignore an old version?** For this complete-state status copy,
+yes, under the stated source-order and single-consumer assumptions. For deltas
+such as increments, skipping an old event may lose an effect. For corrupted
+equal-version data, an ordinary newer-version filter will not repair the field.
+
+**How does the MongoDB reference avoid a race?** The update filter compares
+`source_version` and changes the same document in one command. Two separate
+Python read and write operations would not provide that atomic comparison.
+The reference assumes an existing `_id`; an absent projection requires an
+initialization policy. Blind version-filtered upserts can collide with the
+same existing `_id` when its version is already newer.
+
+**Why not copy whichever timestamp is newer?** A timestamp can represent
+different events, clocks can disagree, and a later manual edit can be wrong.
+Determine ownership and accepted source order before deciding repair direction.
+
+**What belongs in the incident response?** One concise Brightspace text update
+with user impact, the observed stalled boundary, proposed repair, the broken
+and repaired model states, and a broader verification check. A hypothetical
+colleague is the reader, not a lab partner. Do not require a timeline document,
+five-check matrix, screenshots, or notebook attachment.
+
+### Final-Project Clinic
+
+Keep the canonical final-project page open. Students improve their existing
+package rather than creating a Week 14 report. Ask them to demonstrate one
+unfinished claim with their own data: an informative query, an intended
+permission boundary, a query/index decision, or a separate restore check.
+Distinguish a plan from an executed result. If a connection fails, use saved
+redacted results and diagnose the missing connection layer without adding a
+new platform at the last moment.
+
+A single database remains an acceptable final-project choice. For a two-store
+project, ask which facts can be rebuilt and which are independently owned.
+Restore authoritative state before rebuilding a projection, but preserve any
+independent event history or attachments that the authoritative rows do not
+contain. Leave optional engineering extensions as discussion, not new rubric
+requirements.
+
 **Likely misconceptions:** two stores are automatically more scalable, both copies
 can be authoritative, timestamp comparison alone proves correctness, and retrying
 without an idempotent key is safe.
@@ -1475,45 +1755,167 @@ work can use the open local path when a cloud service is unavailable.
 **Teaching decision:** if students repair values without naming ownership and
 verification, require those two statements before final presentations.
 
-## Week 15: Integrated Review, Public Artifact, and Career Translation
+## Week 15: Worked Review, Concept Guide, and Career Communication
 
 **Student materials:** [Week 15 guide](../weeks/week_15/README.md),
-[Chapter 15](../../Operating_Cloud_Databases.pdf#page=146),
-[GitHub concept-artifact lab](../weeks/week_15/lab_01_github_concept_artifact.md), and the
+[Chapter 15](../../Operating_Cloud_Databases.pdf#page=165),
+[review notebook](../notebooks/09_synthesis_review.ipynb),
+[GitHub concept lab](../weeks/week_15/lab_01_github_concept_artifact.md), and the
 canonical [final project](../assignments/final_project.md).
 
-**Prerequisite:** one completed or nearly completed final project and safe public-
-artifact practices.
+**Preparation:** read Chapter 15 and run Notebook 09 from the first cell through
+the cleanup cell. The notebook uses Python's standard-library SQLite connection,
+four synthetic tickets, and three staff members. It needs no packages, password,
+or cloud service. Download it from the weekly page and use Colab's **File > Upload
+notebook**, or open it in local Jupyter. The slide notes contain the spoken
+explanation. This guide adds teaching decisions and troubleshooting rather than
+another script to read aloud.
+
+The review connects earlier work through one discrepancy: three tickets are
+active, but the staff workload report totals two. Students have enough records
+to reason about every row. SQL, document grouping, transactions, and recovery
+each illuminate that same example. Avoid a rapid tour through every platform's
+dashboard or another round of account setup.
 
 ### Day 1 Arc
 
-- Retrieve the course verbs: model, query, restrict, diagnose, measure, recover,
-  integrate, and explain.
-- Model a short public README that teaches one concept with original explanation,
-  safe code or a Markdown guide, expected evidence, and limitations.
-- Students create the GitHub concept artifact individually and verify that no
-  credential, private account detail, or private dataset appears.
-- Translate one artifact into a Situation-Task-Action-Result-Reflection outline.
+Use slides 1-15 with the notebook. Explain one result, then let students predict
+and run its nearby variation. The notes are a complete teaching resource, not a
+requirement to speak every paragraph before students may work. Keep a substantial
+uninterrupted portion of the meeting for the individual concept guide.
+
+| Slides | Notebook work | What students should understand |
+|---|---|---|
+| 1-4 | Setup and inspect the small tables | One row has one stated meaning. Ticket 3 has no assigned staff member. |
+| 5-9 | Run the active-ticket and staff queries, then the two incorrect variants | A result's population matters. A matching total alone does not validate the query. |
+| 10-11 | Change the assignee inside a transaction and reject an invalid status | Successful earlier work remains provisional until commit. Explicit rollback undoes it. |
+| 12-13 | Serialize tickets and group them in Python | A ticket grouping includes an unassigned category, but does not invent staff with no tickets. |
+| 14-15 | Restore into a separate in-memory connection and compare data | Counts can match while a value is wrong. This experiment has narrower guarantees than a cloud recovery procedure. |
+| 16-18 | Preview a README in GitHub and begin the lab | One explained, modified example can teach a specific database concept. |
+
+**The result to establish first:** active ticket IDs are `1, 3, 4`. Priya has one
+assigned active ticket, Noah has one, and Elena has zero. The staff total is two.
+Ticket 3 accounts for the remaining active ticket because its `assignee_id` is
+`NULL`. No record disappeared from the database. The reports describe different
+populations.
+
+Draw or point to the intermediate left-join rows before revisiting the aggregate.
+The row for Elena has a missing matched ticket. `COUNT(t.ticket_id)` ignores that
+NULL value. `COUNT(*)` counts the preserved row and incorrectly reports one ticket
+for Elena. Its total happens to equal the full backlog, which makes this an
+especially useful counterexample to checking only totals. Moving the active-status
+condition into `WHERE` removes Elena instead. Keep the match condition in `ON`
+when the question requires every staff member, including zero.
+
+**The student-controlled change:** the notebook's `TARGET_ASSIGNEE` defaults to
+203. Before students run it, ask them to predict both the staff report and the
+overall active count. For 203, the temporary staff counts become `1, 1, 1`. For
+201 they become `2, 1, 0`; for 202 they become `1, 2, 0`. The active count remains
+three in each case. Changing the assignee does not change the status. The
+`finally` block rolls back, so each trial starts from the same records.
+
+An absent target such as 999 violates the foreign key. The example rolls back
+even if the change fails. A separate cell first makes a valid assignment, then
+attempts the invalid status `finished`. Its explicit rollback removes the earlier
+valid assignment too. Do not teach that any SQL error automatically undoes an
+entire transaction: SQLite commonly aborts the failing statement while leaving
+the transaction active. PostgreSQL's failed-transaction behavior differs. In both
+environments, deliberately ending the failed transaction remains important.
+
+**The document comparison:** Python dictionaries become JSON objects with `null`
+for the missing assignee. The notebook's Python loop groups active tickets under
+201, 202, and `None`, with one each. The MQL block on the page is a reference for
+the corresponding four-document MongoDB collection. The notebook does not run
+MQL or connect to Atlas. `$group` produces categories from its input documents,
+so it has no Elena category when she has no ticket. Neither representation is
+inherently wrong: they answer different questions until their input populations
+are reconciled.
+
+**The restore comparison:** the first copy matches the source. A later statement
+changes ticket 1 only in the restored copy. Both connections still contain four
+tickets, but the source says `open` and the altered copy says `resolved`. The
+ordered row comparison detects it. The source connection remains unchanged.
+Explain why a real recovery check also considers schema, constraints, permissions,
+and application behavior. The SQL dump in this lesson exists only in memory. It
+does not survive losing the runtime and is not an off-machine backup.
+
+Use slides 16-18 to show a small README with a language-labeled code fence. GitHub
+formats the code but does not execute it. Preview the page, commit a descriptive
+change, and check the shared link. Students then write their own concept guide.
+One file is sufficient. They may adapt the review, but must explain their own
+changed example. A static, carefully reasoned guide is acceptable if its output
+is labeled as predicted. Do not add a second notebook submission or require an
+unrelated platform lab during this final meeting.
+
+When circulating, ask a student to locate the record that explains their result.
+Then ask what their one change would affect and what would remain unchanged.
+This checks understanding without turning the activity into another written
+worksheet. Redirect overly large projects to one mechanism and a few synthetic
+records. The [lab](../weeks/week_15/lab_01_github_concept_artifact.md) remains the
+single source for the submission instructions.
 
 ### Day 2 Arc
 
-- Use the post-course inventory for reflection and course improvement, not a
-  final-exam grade.
-- Students give short individual final demonstrations centered on one operating
-  claim and its evidence.
-- Ask follow-up questions about tradeoffs, limitations, and the next production
-  check rather than obscure trivia.
-- Students complete the interview response and name one next skill/artifact.
+Use slides 19-26 around the individual final demonstrations. The canonical final
+assignment governs the project, presentation, and rubric. This week does not add
+a new final-project report, a compulsory slide deck, or a reflection grade.
 
-**Live demonstration:** turn a weak claim such as “I know MongoDB” into a supported
-claim naming the workload, action, observed evidence, tradeoff, and limitation.
+**Check the roster before announcing presentation slots.** A 100-minute meeting
+cannot hold an unlimited number of 5-7 minute demonstrations. Reserving 20 minutes
+for class framing and career work leaves room for about ten seven-minute
+demonstrations with a one-minute transition each. Resolve a larger roster across
+the course's approved presentation schedule in advance and communicate the plan
+in Brightspace. Do not silently shorten the promised demonstrations, add a new
+required meeting, or eliminate the individual lab to conceal a scheduling gap.
 
-**Likely misconceptions:** a tool list is a portfolio, classroom scale invalidates
-all skill evidence, confidence requires hiding limitations, and public work should
-include real credentials or account screenshots.
+Model the query explanation on slide 20, then ask students to explain their own
+project decision at the same level of specificity. A useful follow-up changes one
+assumption: an unassigned record, a repeated import, a forbidden user action, a
+missing index, or a restored value. Choose a question connected to what the
+student actually built. Avoid rewarding unrelated terminology or trivia.
+
+The resume example on slide 21 names a diagnosis, SQL mechanism, and tested
+change. Students should use it only if they completed and understand that work.
+They can replace it with their own project result. A classroom result is worth
+discussing as classroom work. It does not establish production scale, an uptime
+guarantee, or experience administering a system that they did not use.
+
+Slide 22 organizes an interview answer into situation, task, action, result, and
+reflection. The result is a technical observation rather than a fabricated
+business metric. Slide 23 models a follow-up about assigning ticket 3 to Elena.
+Students practice individually in their own notes. There is no additional
+reflection submission. If using the post-course inventory for course improvement,
+keep its diagnostic purpose separate from the final-project grade and report
+only appropriately aggregated results.
+
+Close with the platform-choice examples and the connection to workplace
+responsibilities. PostgreSQL can store JSON and MongoDB can reference documents.
+A database choice needs a workload and integrity requirements, not just a format
+label. Ask students to identify one specific skill in a role that interests them
+and one small next experiment. This is planning for continued learning, not an
+additional assignment after the course ends.
+
+### Troubleshooting and Teaching Boundaries
+
+- A missing `db`, `report_sql`, or table usually means cells ran out of order or
+  cleanup already closed the connection. Restart and run from the beginning.
+- A runtime restart removes the in-memory database. The setup recreates it, so
+  students do not need to recover or upload a database file.
+- Python raises an error if the final closed connections are used again. This
+  confirms cleanup, rather than a reason to add another cloud service.
+- SQLite in this lesson does not reproduce Supabase RLS, PostgreSQL lock
+  diagnosis, or Atlas replication. Use the earlier platform-specific exercises
+  for those claims.
+- A private repository is valid when the instructor has access. A public GitHub
+  profile is not a condition of demonstrating the learning outcome.
+- Keep code and result labels readable. A short explanation of one actual row is
+  more useful than a long list of claimed skills.
 
 **Equivalent path:** a local Markdown/code artifact may be submitted privately if
-public GitHub creates a barrier. The interview explanation remains the same.
+an account or accessibility barrier prevents GitHub use. A student can also work
+from the deck's tables and clearly label a reasoned result if code execution is
+unavailable. Keep the same concept and explanation standard rather than assigning
+an extra task. No group or partner work is required.
 
 **Teaching decision:** report aggregate changes in concept categories and material
 access. Do not publish named student results or claim causal impact beyond the

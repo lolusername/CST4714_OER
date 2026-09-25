@@ -15,7 +15,7 @@ project, and specific interview story?
 
 ## Before Class: Assigned Reading
 
-Use [Chapter 15: Professional Communication Makes Technical Skill Visible](../../../Operating_Cloud_Databases.pdf#page=146).
+Use [Chapter 15: Professional Communication Makes Technical Skill Visible](../../../Operating_Cloud_Databases.pdf#page=165).
 
 - **Before Day 1:** read the system review, worked SQL explanation, and portfolio-concept sections. Use them to build the single in-class concept guide.
 - **Before Day 2:** read the demonstration and interview sections. Choose an explanation that accurately describes your own completed work.
@@ -30,17 +30,34 @@ unless the weekly lab assigns it.
 - [Week 15 student deck](week_15_synthesis_careers.pptx)
 - [Week 15 PDF handout](week_15_synthesis_careers.pdf)
 - [Week 15 transcript](week_15_synthesis_careers_transcript.md)
+- [Review notebook: Four Tickets, Two Different Totals](../../notebooks/09_synthesis_review.ipynb)
+- [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lolusername/CST4714_OER/blob/main/course_materials/notebooks/09_synthesis_review.ipynb) for the review and optional final-lab example; save a working copy in Drive.
+
+Click **Open in Colab** above, or download the notebook for local Jupyter.
+It uses Python's SQLite library and synthetic records. Colab requires a Google
+sign-in; no Atlas/Supabase account, database password, or package installation
+is needed.
 
 ## Day 1: Integrated Review and Portfolio Project
 
-The class uses selected cells from the relational SQL, lock, recovery, MQL, and
-public-data notebooks to reconnect the major skills from the course.
+Use **slides 1-18** alongside the review notebook and individual concept lab.
+
+We start with four tickets and a dashboard whose staff counts do not equal its
+backlog. In the review notebook, we trace the SQL result, test an assignment
+change and rollback, compare the same facts as documents, and check why a restore
+can have the right row count but a wrong value. The examples reconnect earlier
+course skills without requiring several cloud connections.
 
 Complete [Final lab: Teach one database concept in GitHub](lab_01_github_concept_artifact.md).
 
-Submit only the public or instructor-accessible project URL.
+Use one example from the review or another course concept. A single README with
+code examples is enough. Submit only its public or instructor-accessible URL and
+the lab's one-sentence description. The notebook itself is not another submission.
 
 ## Day 2: Final Demonstrations and Career Translation
+
+Use **slides 19-26** for demonstrations and translating project work into
+specific professional explanations.
 
 Present the final project according to the
 [canonical final-project requirements](../../assignments/final_project.md). Use prepared,

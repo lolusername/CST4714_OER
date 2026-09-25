@@ -15,6 +15,6 @@ Databases*. They are instructor-facing OER, not private grading materials.
 - [Production, validation, and release guide](../RELEASE_CHECKLIST.md): inventory,
   technical, accessibility, licensing, privacy, and release checks.
 
-Private planning documents are separate from these reusable teaching resources.
-Private answers, student records, and private grading comments do not belong in
-this directory or in a public release.
+The fellowship planning documents remain separate from
+these reusable teaching resources. Private answers, student records, and private
+grading comments do not belong in this directory or in a public release.

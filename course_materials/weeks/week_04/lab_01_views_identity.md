@@ -1,5 +1,7 @@
 # Lab 1: Give the Dashboard a Stable Query
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_04/lab_01_views_identity.md)
+
 The staff dashboard needs the same active-ticket list every day. Put that query
 behind a view, then investigate why automatically generated IDs sometimes skip.
 
@@ -8,8 +10,10 @@ Work individually in class. Submit one SQL file in Brightspace.
 ## 1. Create and Check the View
 
 Use the [Metro Support data](../../datasets/metro_support/README.md) in a personal
-Supabase/PostgreSQL database. If you are starting fresh, run its
-[setup](../../datasets/metro_support/postgres_setup.sql). Expect 12 tickets.
+Supabase/PostgreSQL database or the PGlite browser environment from Week 3. If
+you are starting fresh, follow the dataset's
+[loading instructions](../../datasets/metro_support/README.md#load-the-course-tables-once).
+Expect 12 tickets. Keep this database and the view you create for Lab 2.
 
 A view is a named query. Start with this working version:
 

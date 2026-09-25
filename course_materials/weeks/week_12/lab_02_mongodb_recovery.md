@@ -1,5 +1,9 @@
 # Lab 2: Recover the Documents and Their Rules
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_12/lab_02_mongodb_recovery.md)
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lolusername/CST4714_OER/blob/main/course_materials/notebooks/05_mongodb_logical_recovery.ipynb)
+
 A recovery check reports the correct ticket count, IDs, and date types. One
 subject is still wrong. Find what those checks missed, recover that document
 from the saved artifact, and distinguish its values from the collection's rules.
@@ -8,11 +12,12 @@ Work individually in class. Submit one completed notebook.
 
 ## 1. Restore and Repair One Ticket
 
-Download [MongoDB Logical Recovery](../../notebooks/05_mongodb_logical_recovery.ipynb)
-and upload it in [Colab](https://colab.research.google.com/) through **File > Upload
-notebook**. Run in order.
+Click **Open in Colab** above and save a working copy in Drive. The
+[downloadable notebook](../../notebooks/05_mongodb_logical_recovery.ipynb) also supports local Jupyter.
+Run in order.
 
-The default local path needs no account. For Atlas, follow the notebook's pause
+The default practice path needs no database account. Colab requires a Google
+sign-in. For Atlas, follow the notebook's pause
 to add the Colab runtime's temporary `/32` IP rule before entering a hidden URI.
 Both paths use fresh source and restore names. The notebook never asks you to
 change an existing project collection or trigger a failover.

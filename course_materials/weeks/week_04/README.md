@@ -15,7 +15,7 @@ surprising users or losing the ability to verify and recover?
 
 ## Before Class: Assigned Reading
 
-Use [Chapter 4: Safe Changes Are Planned and Verified](../../../Operating_Cloud_Databases.pdf#page=38).
+Use [Chapter 4: Safe Changes Are Planned and Verified](../../../Operating_Cloud_Databases.pdf#page=39).
 
 - **Before Day 1:** read **Views Create a Query Interface** through **Introspection Reveals the Actual State**. Trace the explicitly committed and rolled-back insertions. Reading examples use separate object names so they can coexist with the lab.
 - **Before Day 2:** read from **What a Migration Must Establish** through **Verification Should Cover Structure and Meaning**. Focus on unknown historical values and compatibility with older clients.
@@ -26,6 +26,7 @@ unless the weekly lab assigns it.
 
 ## Class Materials
 
+- [PostgreSQL setup and editor help](../../datasets/metro_support/README.md#first-postgresql-session)
 - [Week 4 student deck](week_04_views_identity_safe_change.pptx)
 - [Week 4 PDF handout](week_04_views_identity_safe_change.pdf)
 - [Week 4 transcript](week_04_views_identity_safe_change_transcript.md)
@@ -38,6 +39,11 @@ commit or rollback decisions. In
 [Lab 1: Build a stable query interface](lab_01_views_identity.md), adapt the view
 to an optional assignee and explain the identity gap. The lab includes the
 metadata queries needed to inspect both objects.
+
+Keep using your Week 3 practice database. The PGlite browser option also works
+for both of this week's labs. If you used it, return in the same browser profile
+and keep the Day 1 view for Day 2. Your saved SQL file is what you submit, not the
+browser's local database.
 
 Submit only `week_04_views_identity.sql`.
 

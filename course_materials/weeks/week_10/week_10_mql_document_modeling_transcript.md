@@ -95,7 +95,7 @@ The projection contains underscore id with zero and two requested fields with on
 
 The for loop iterates over the cursor from find and prints each returned document. On this fixture it prints one dictionary. If a filter returned three tickets, the loop would print three documents, still at the grain of one ticket per item.
 
-For your own query change, choose a question that this fixture can answer and predict at least one returned ticket. The useful check is whether the selected fields and records answer that question, not whether the cell merely finishes without an exception.
+In the notebook, we compare this result with a SQL query over the same six tickets. SQL returns an ID and status in a row. MongoDB returns those fields in a document. Both identify ticket 1001. Your lab changes the question to an active lighting-and-sanitation queue, including medium-priority work. We will change the filter to match that requirement and keep priority visible in the output.
 
 Sources:
 - https://www.mongodb.com/docs/languages/python/pymongo-driver/current/crud/query/find/
@@ -232,7 +232,11 @@ Finally, a preview query is not a lock. Another writer can act between the previ
 
 ## Slide 17
 
-The first lab stays in one notebook. Begin with its worked query and then change one filter so it answers a different question about the six tickets. Add one useful field to the projection. Choose a returned ticket and explain why it belongs in that answer.
+The first lab stays in one notebook. We have used SQL and MongoDB to ask the same question about the same six tickets. Both results identified ticket 1001 as active and high priority. The syntax changed, but we still had to decide which records belong in the answer and which fields to show.
+
+Your question is now different. The lighting and sanitation crews want their active requests, newest first, with priority displayed. A medium-priority request still needs work. Keep the category condition in the starter, add the active-status condition, and add priority to the projection. Carrying over the demonstration's high-or-urgent condition would incorrectly hide some work.
+
+Predict the order from the actual opening dates before running the query. The completed queue has tickets 1006, 1002, and 1001, in that order. Ticket 1005 belongs to sanitation and has high priority, but it is resolved. Including it would mix completed work with the crew's current queue. This is why a query can be syntactically correct yet answer a different operational question.
 
 Next, compare the array predicates using the actual event objects. The useful part is the difference between a resident-created event and a separate agent event in one ticket. Your explanation should connect the data to the observed query results.
 

@@ -1,5 +1,9 @@
 # Lab 1: Count Requests Without Counting Them Twice
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_11/lab_01_pipeline_validation.md)
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lolusername/CST4714_OER/blob/main/course_materials/notebooks/07_aggregation_validation.ipynb)
+
 A summary says there are three active requests. That sounds correct, but the
 pipeline counted one request twice and lost another. Find out how a plausible
 total can hide an incorrect result.
@@ -8,9 +12,9 @@ Work individually in class. Submit one completed notebook in Brightspace.
 
 ## 1. Build and Check the Summary
 
-Download [From Tickets to a Reliable Summary](../../notebooks/07_aggregation_validation.ipynb),
-open [Colab](https://colab.research.google.com/), and choose **File > Upload
-notebook**. Run the notebook in order. It supplies its own four-ticket case;
+Click **Open in Colab** above and save a working copy in Drive. The
+[downloadable notebook](../../notebooks/07_aggregation_validation.ipynb) also supports local Jupyter.
+Run the notebook in order. It supplies its own four-ticket case;
 nothing from Week 10 needs to be retained.
 
 Keep local mode on, or use your personal Atlas practice project with the notebook's

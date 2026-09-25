@@ -8,9 +8,9 @@ digraph ReplicaSet {
         fontsize=9, fontcolor="#51606D"];
 
   client [shape=box, style="rounded,filled", label="Application client", fillcolor="#FFFFFF"];
-  primary [label="Primary\naccepts writes", fillcolor="#EAF4F3"];
-  secondary1 [label="Secondary A\nreplicates oplog"];
-  secondary2 [label="Secondary B\nreplicates oplog"];
+  primary [label="Primary A\naccepts writes", fillcolor="#EAF4F3"];
+  secondary1 [label="Secondary B\nreplicates oplog"];
+  secondary2 [label="Secondary C\nreplicates oplog"];
   election [shape=diamond, label="Election after\nprimary loss", fillcolor="#FFF4E8", color="#C8653B"];
 
   client -> primary [label="writes"];

@@ -1,9 +1,18 @@
 # Lab 1: Why Does a Twenty-Row Result Read So Much Data?
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_07/lab_01_plan_reading.md)
+
 The support queue displays only twenty tickets. That does not mean PostgreSQL
 needs to examine only twenty rows. Use a query plan to find out what it does.
 
 Work individually in class. Submit one SQL file in Brightspace.
+
+If you cannot connect to your cloud database, use the
+[existing disposable PostgreSQL notebook setup](../week_06/README.md#postgresql-without-a-cloud-database-account).
+After its setup, put the complete `performance_lab_setup.sql` script below
+inside one `run_sql(""" ... """)` call in a new code cell. Run this lab's queries
+the same way. Save your SQL and observations before using the notebook's final
+database cleanup. No additional notebook submission is required.
 
 ## 1. Run the Workload
 
@@ -40,7 +49,7 @@ LIMIT 20;
 Plain EXPLAIN estimates work. ANALYZE actually executes the statement; here it is
 a read-only SELECT. BUFFERS reports page activity.
 
-Use the [Chapter 7 plan explanation](../../../Operating_Cloud_Databases.pdf#page=64) to
+Use the [Chapter 7 plan explanation](../../../Operating_Cloud_Databases.pdf#page=68) to
 identify the scan, any sort, and the final limit. Write short comments answering:
 
 - How does PostgreSQL find qualifying tickets? Name the actual scan node.

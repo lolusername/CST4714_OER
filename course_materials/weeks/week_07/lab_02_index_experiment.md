@@ -1,9 +1,16 @@
 # Lab 2: Does This Index Earn Its Space?
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_07/lab_02_index_experiment.md)
+
 Test whether an index helps the twenty-newest-open-tickets query. A useful
 conclusion explains the mechanism and the cost, even when timing is noisy.
 
 Work individually in class. Submit one SQL file in Brightspace.
+
+Use the same database route as [Lab 1](lab_01_plan_reading.md), including its
+disposable-notebook option if needed. A new runtime is fine: the setup below
+rebuilds this lab's data and removes its previous index. Save your results before
+the notebook's final database cleanup.
 
 ## 1. Record the Same Query Before the Change
 

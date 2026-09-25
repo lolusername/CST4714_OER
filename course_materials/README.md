@@ -11,9 +11,9 @@ performance, recovery, document databases, and cloud operations.
 
 ## Start Here
 
-- **[Download the complete textbook (PDF)](https://raw.githubusercontent.com/lolusername/CST4714_OER/main/Operating_Cloud_Databases.pdf)**: 161 pages, 15 chapters, equations, code listings, diagrams, and cloud-interface examples. The book is published in PDF form only.
+- **[Download the complete textbook (PDF)](https://raw.githubusercontent.com/lolusername/CST4714_OER/main/Operating_Cloud_Databases.pdf)**: 190 pages, 15 chapters, equations, code listings, diagrams, and cloud-interface examples. The book is published in PDF form only.
 - **[Weekly class materials](weeks/README.md)**: two meetings per week, slides, individual labs, readings, and notebook links.
-- **[Run the notebooks](notebooks/README.md)**: seven executable lessons with direct Open in Colab buttons.
+- **[Run the notebooks](notebooks/README.md)**: nine core lessons and two supplementary SQL walkthroughs, with direct Open in Colab links.
 - **[Instructor guides](instructor/README.md)**: lesson plans, demonstrations, troubleshooting, accessibility, and adaptation.
 - **[Example syllabus (PDF)](CST4714_Fall_2026_Syllabus.pdf)** and [editable syllabus](syllabus.md): adapt the Fall 2026 dates, local policies, and submission arrangements before teaching another section.
 
@@ -32,24 +32,24 @@ jump to a PDF fragment; download the book and use its bookmarks or page field.
 | 1 | [Applications, DBMSs, and relational thinking](weeks/week_01/README.md) | [Chapter 1, p. 6](../Operating_Cloud_Databases.pdf#page=6), then the opening of [Chapter 2, p. 16](../Operating_Cloud_Databases.pdf#page=16) |
 | 2 | [Major SQL review: filters, joins, grouping, and safe DML](weeks/week_02/README.md) | [Chapter 2, p. 16](../Operating_Cloud_Databases.pdf#page=16) |
 | 3 | [Schemas, keys, constraints, and metadata](weeks/week_03/README.md) | [Chapter 3, p. 28](../Operating_Cloud_Databases.pdf#page=28) |
-| 4 | [Views, identity columns, and safe schema changes](weeks/week_04/README.md) | [Chapter 4, p. 38](../Operating_Cloud_Databases.pdf#page=38) |
-| 5 | [Transactions, MVCC, locks, and blocking](weeks/week_05/README.md) | [Chapter 5, p. 47](../Operating_Cloud_Databases.pdf#page=47) |
-| 6 | [Roles, privileges, row-level security, and secrets](weeks/week_06/README.md) | [Chapter 6, p. 56](../Operating_Cloud_Databases.pdf#page=56) |
-| 7 | [Query plans, selectivity, and index design](weeks/week_07/README.md) | [Chapter 7, p. 64](../Operating_Cloud_Databases.pdf#page=64) |
-| 8 | [Backup, restore, and the midterm operations case](weeks/week_08/README.md) | [Chapter 8, p. 72](../Operating_Cloud_Databases.pdf#page=72) |
-| 9 | [NoSQL history and models, JSON, and Atlas orientation](weeks/week_09/README.md) | [Chapter 9, p. 82](../Operating_Cloud_Databases.pdf#page=82) |
-| 10 | [Basic MQL and document modeling](weeks/week_10/README.md) | [Chapter 10, p. 96](../Operating_Cloud_Databases.pdf#page=96) |
-| 11 | [Aggregation, validation, indexes, and explain](weeks/week_11/README.md) | [Chapter 11, p. 109](../Operating_Cloud_Databases.pdf#page=109) |
-| 12 | [Replication, consistency choices, and logical recovery](weeks/week_12/README.md) | [Chapter 12, p. 118](../Operating_Cloud_Databases.pdf#page=118) |
-| 13 | [Capacity, shard keys, Python, and public-data imports](weeks/week_13/README.md) | [Chapter 13, p. 128](../Operating_Cloud_Databases.pdf#page=128) |
-| 14 | [Polyglot systems, outbox pattern, and incident repair](weeks/week_14/README.md) | [Chapter 14, p. 137](../Operating_Cloud_Databases.pdf#page=137) |
-| 15 | [Integrated review, portfolios, and interviews](weeks/week_15/README.md) | [Chapter 15, p. 146](../Operating_Cloud_Databases.pdf#page=146) |
+| 4 | [Views, identity columns, and safe schema changes](weeks/week_04/README.md) | [Chapter 4, p. 39](../Operating_Cloud_Databases.pdf#page=39) |
+| 5 | [Transactions, MVCC, locks, and blocking](weeks/week_05/README.md) | [Chapter 5, p. 48](../Operating_Cloud_Databases.pdf#page=48) |
+| 6 | [Roles, privileges, row-level security, and secrets](weeks/week_06/README.md) | [Chapter 6, p. 58](../Operating_Cloud_Databases.pdf#page=58) |
+| 7 | [Query plans, selectivity, and index design](weeks/week_07/README.md) | [Chapter 7, p. 68](../Operating_Cloud_Databases.pdf#page=68) |
+| 8 | [Backup, restore, and the midterm operations case](weeks/week_08/README.md) | [Chapter 8, p. 76](../Operating_Cloud_Databases.pdf#page=76) |
+| 9 | [NoSQL history and models, JSON, and Atlas orientation](weeks/week_09/README.md) | [Chapter 9, p. 86](../Operating_Cloud_Databases.pdf#page=86) |
+| 10 | [Basic MQL and document modeling](weeks/week_10/README.md) | [Chapter 10, p. 101](../Operating_Cloud_Databases.pdf#page=101) |
+| 11 | [Aggregation, validation, indexes, and explain](weeks/week_11/README.md) | [Chapter 11, p. 116](../Operating_Cloud_Databases.pdf#page=116) |
+| 12 | [Replication, consistency choices, and logical recovery](weeks/week_12/README.md) | [Chapter 12, p. 125](../Operating_Cloud_Databases.pdf#page=125) |
+| 13 | [Capacity, shard keys, Python, and public-data imports](weeks/week_13/README.md) | [Chapter 13, p. 140](../Operating_Cloud_Databases.pdf#page=140) |
+| 14 | [Polyglot systems, outbox pattern, and incident repair](weeks/week_14/README.md) | [Chapter 14, p. 153](../Operating_Cloud_Databases.pdf#page=153) |
+| 15 | [Integrated review, portfolios, and interviews](weeks/week_15/README.md) | [Chapter 15, p. 165](../Operating_Cloud_Databases.pdf#page=165) |
 
 ## Companion Collection
 
 The [OER catalog](OER_CATALOG.md) describes every resource and its educational
-contribution: 15 weekly guides, 24 labs, seven notebooks, three data packages,
-15 original PowerPoints with speaker scripts, matching PDF handouts and text
+contribution: 15 weekly guides, 24 labs, 11 notebooks, three data packages,
+15 original PowerPoints with 380 slides and speaker scripts, matching PDF handouts and text
 transcripts, six assessment resources, two major projects, and five adoption
 and release guides. The book's 15 chapters are the 15 text modules, not an
 additional set of materials.
@@ -72,9 +72,11 @@ slides in PowerPoint and notebooks in Colab or Jupyter. Textbook source files,
 Word/HTML/EPUB book editions, vendor-owned presentations, private grading files,
 and fellowship administration records are not part of this repository.
 
-This is a **public teaching draft**, not a claim of external peer review,
-institutional approval, or accessibility certification. The catalog records
-review limits, including pending alignment review for the later slide decks.
+This is a **public teaching draft**, updated September 25, 2026, not a claim of
+external peer review, institutional approval, or accessibility certification.
+The full sequence has been revised, with local example tests and visual reviews.
+Fresh hosted Colab/cloud end-to-end testing and full accessibility review are
+not claimed. The catalog distinguishes these limits from completed content.
 Rehearse the selected labs and check current platform limits before teaching.
 Slide transcripts are included; PDF reading order still needs accessibility
 review. Use the [adaptation guide](instructor/accessibility_adaptation.md) when

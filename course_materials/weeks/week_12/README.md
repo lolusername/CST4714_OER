@@ -18,7 +18,7 @@ steps are needed after a destructive change?
 
 ## Before Class: Assigned Reading
 
-Use [Chapter 12: Reliability Is a Set of Explicit Promises](../../../Operating_Cloud_Databases.pdf#page=118).
+Use [Chapter 12: Reliability Is a Set of Explicit Promises](../../../Operating_Cloud_Databases.pdf#page=125).
 
 - **Before Day 1:** read the replica-set, acknowledgment, read-control, and CAP sections. Explain the A/B/C partition case without changing a real deployment.
 - **Before Day 2:** read from **Replication Is Not Backup** through **Verify a MongoDB Restore**. Distinguish BSON-aware data recovery from restoring indexes, validators, and project configuration.
@@ -30,7 +30,7 @@ unless the weekly lab assigns it.
 ## Class Materials
 
 - [MongoDB logical recovery notebook](../../notebooks/05_mongodb_logical_recovery.ipynb)
-- [Open Colab](https://colab.research.google.com/), then **File > Upload notebook** using the downloaded file above.
+- [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lolusername/CST4714_OER/blob/main/course_materials/notebooks/05_mongodb_logical_recovery.ipynb) for Lab 2; save a working copy in Drive.
 - [Week 12 student deck](week_12_mongodb_reliability.pptx)
 - [Week 12 PDF handout](week_12_mongodb_reliability.pdf)
 - [Week 12 transcript](week_12_mongodb_reliability_transcript.md)
@@ -41,6 +41,12 @@ unless the weekly lab assigns it.
 - [MongoDB Atlas Backup and Recovery course](https://learn.mongodb.com/learn/course/mongodb-atlas-backup-recovery/lesson-1-back-up-and-recover-an-atlas-free-tier/learn)
 
 ## Day 1: Build a Reliability Promise
+
+Use **slides 1-16**. Follow one request from the primary's write through oplog
+replication, acknowledgment, and the next read. Compare what A and B can do while
+C is isolated, then work through separate recovery-point and recovery-time
+examples. The Atlas screen explains why the free path needs a retained logical
+artifact rather than a paid backup feature.
 
 Complete [Lab 1: Match user expectations to replica and recovery decisions](lab_01_reliability_decisions.md).
 
@@ -53,6 +59,9 @@ to choose a scenario and its important reads/writes in your existing project
 notes, rather than making another Week 12 submission.
 
 ## Day 2: Export, Restore Elsewhere, and Verify
+
+Use **slides 17-30** alongside the notebook. The code and displayed document
+values come from the same five-ticket example used in the lab.
 
 Complete [Lab 2: MongoDB logical recovery](lab_02_mongodb_recovery.md).
 

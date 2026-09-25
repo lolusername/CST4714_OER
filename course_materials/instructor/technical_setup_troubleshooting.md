@@ -11,7 +11,8 @@ course release; do not turn a paid feature or trial into a student requirement.
 
 Before the term:
 
-1. Run all six notebooks from a clean runtime using their default offline paths.
+1. Run the notebooks in the [current index](../notebooks/README.md) from a clean
+   runtime using their default local or offline paths where provided.
 2. Test one current Supabase Free PostgreSQL connection from the campus network.
 3. Test one current Atlas Free connection from the campus network and Colab.
 4. Confirm the selected MongoDB University activities remain free and distinct
@@ -60,8 +61,11 @@ action when the repository is public.
 
 ## Colab and Local Jupyter
 
-Every course notebook has an **Open in Colab** badge and remains downloadable for
-local Jupyter. Students should run cells from top to bottom after a runtime reset.
+The [notebook index](../notebooks/README.md) gives the supported Colab opening
+method for each lesson. A notebook without a published direct link must be
+downloaded and uploaded through Colab's **File > Upload notebook** option.
+All remain downloadable for local Jupyter. Students should run cells from top
+to bottom after a runtime reset.
 
 If a package import fails:
 
@@ -77,6 +81,19 @@ history. Restarting a Colab runtime removes in-memory variables but does not era
 values already saved into the notebook.
 
 ## Supabase and PostgreSQL Connection Path
+
+For the first PostgreSQL class, open the student-facing
+[First PostgreSQL session](../datasets/metro_support/README.md#first-postgresql-session)
+walkthrough. It covers the SQL Editor, a first result, loading the fixture,
+finding the `metro_support` schema, and interpreting errors. Use that path
+before asking beginners to configure a driver or copy a database URL.
+
+The linked PGlite playground is a no-account PostgreSQL option for **Weeks 3 and
+4**. Those exercises use one session and cover schemas, constraints, views,
+identity allocation, and migration rollback. PGlite is not the replacement for
+the independent sessions in Week 5, Supabase identity in Week 6, or the cloud
+recovery workflow. Follow each later lab's own fallback. Students should keep
+their SQL outside browser storage and avoid resetting between the Week 4 labs.
 
 Treat Supabase as a managed service around PostgreSQL, not as a different SQL
 language. The provider manages infrastructure; the course user still owns schema,

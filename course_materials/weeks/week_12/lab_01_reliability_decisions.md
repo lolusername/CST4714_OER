@@ -1,5 +1,7 @@
 # Lab 1: What Does a Confirmation Promise?
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_12/lab_01_reliability_decisions.md)
+
 A resident submits a request and sees a confirmation. The next read shows nothing.
 Did the database lose the request, is a copy behind, or did the client fail to
 learn whether the write succeeded? Those possibilities need different responses.
@@ -18,7 +20,7 @@ show when its data was refreshed. Replication delay is not a fixed maximum, and 
 secondary preference by itself does not guarantee a particular staleness bound.
 
 Now recommend a policy for a resident's **confirmation and immediate ticket
-page**. Use [Chapter 12](../../../Operating_Cloud_Databases.pdf#page=118) to choose:
+page**. Use [Chapter 12](../../../Operating_Cloud_Databases.pdf#page=125) to choose:
 
 - how many members should acknowledge the write;
 - where the next read should go, which read concern it should use, and how a

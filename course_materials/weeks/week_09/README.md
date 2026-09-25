@@ -15,7 +15,7 @@ would we keep, what might we change, and why?
 
 ## Before Class: Assigned Reading
 
-Use [Chapter 9: Documents Emerged From Changing Workloads](../../../Operating_Cloud_Databases.pdf#page=82).
+Use [Chapter 9: Documents Emerged From Changing Workloads](../../../Operating_Cloud_Databases.pdf#page=86).
 
 - **Before Day 1:** read the history and model comparisons through **Specialized Models Trade Generality for Directness**. Work through the small graph and vector examples; no graph/vector deployment is required.
 - **Before Day 2:** read from **JSON Became a Common Interchange Format** through **Worked Example: Compare Two Ticket Shapes**. No SQL, MQL, or Python execution is required for the JSON design lab.

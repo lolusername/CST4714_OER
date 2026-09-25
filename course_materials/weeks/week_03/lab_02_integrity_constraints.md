@@ -1,5 +1,7 @@
 # Lab 2: Make Misspelled Statuses Impossible
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_03/lab_02_integrity_constraints.md)
+
 A ticket marked `IN PROGRESS` can disappear from a report that searches for
 `in_progress`. Add rules that prevent this problem at every database write path.
 

@@ -16,9 +16,9 @@ restored result works?
 
 ## Before Class: Assigned Reading
 
-Use [Chapter 8: A Backup Matters Only When Recovery Works](../../../Operating_Cloud_Databases.pdf#page=72).
+Use [Chapter 8: A Backup Matters Only When Recovery Works](../../../Operating_Cloud_Databases.pdf#page=76).
 
-- **Before Day 1:** read the recovery concepts through **Free-Tier Reality in This Course** and **Verify Structure, Data, and Behavior**. Use the command explanations as a reference while running the restore notebook.
+- **Before Day 1:** read the recovery concepts through **Free-Tier Recovery** and **Verify Structure, Data, and Behavior**. Use the command explanations as a reference while running the restore notebook.
 - **Before Day 2:** read **Worked Example: A Recovery Runbook Entry** and **Safe Migrations and Recovery Are Connected**. Revisit the earlier chapters relevant to your midterm case.
 
 Bring one point you want clarified. Reading supports the in-class work; it does

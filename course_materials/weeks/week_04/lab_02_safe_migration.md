@@ -1,5 +1,7 @@
 # Lab 2: Add a Field Without Inventing History
 
+[Open in GitHub](https://github.com/lolusername/CST4714_OER/blob/main/course_materials/weeks/week_04/lab_02_safe_migration.md)
+
 Metro Support will collect a request's source channel: web, phone, or mobile.
 Old tickets have no reliable channel field. Some notes mention a mobile form,
 so labeling all old tickets `web` would manufacture information.
@@ -51,7 +53,7 @@ ROLLBACK;
 ```
 
 Complete the three commented instructions. Use the
-[Chapter 4 migration example](../../../Operating_Cloud_Databases.pdf#page=38) and the
+[Chapter 4 migration example](../../../Operating_Cloud_Databases.pdf#page=39) and the
 [Week 3 constraint lab](../week_03/lab_02_integrity_constraints.md) as references.
 Rerun the precheck: rollback should remove the new column entirely.
 
